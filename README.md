@@ -41,6 +41,34 @@ sequenceDiagram
     You->>Website: Replace this with your design
 ```
 
+flowchart TD
+    subgraph Login Page
+        A1[Username Field] --> A2[Password Field]
+        A2 --> A3[Login Button]
+        A3 --> A4[Sign Up Option (Optional)]
+    end
+
+    subgraph Game Page
+        B1[Pacman Game Interface]
+        B2[Start Game Button]
+        B3[Player Stats (Score, Lives)]
+        B4[Quit Game Button]
+        B1 --> B3
+        B2 --> B1
+    end
+
+    subgraph Leaderboard Page
+        C1[Leaderboard Table (User Scores)]
+        C2[Highlighted User Stats]
+        C3[Play Again Button]
+        C4[Random Dog API Image]
+        C3 --> B1
+        C4 --> C1
+    end
+
+    A3 --> B2
+    B4 --> C1
+
 ### Key features
 
 - Login/Logout System: Allow users to register, log in securely, and view their profile.
