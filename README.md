@@ -51,30 +51,12 @@ sequenceDiagram
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Structure the website, including:
-                *** A login page.
-                - The game page with the Pacman interface.
-                - The leaderboard page showing user rankings.
-- **CSS** - Style the website for a clean and responsive look:
-                - Themed styling for the game (e.g., a retro Pacman aesthetic).
-                - Responsive design for desktop and mobile users.
-                - Animations for transitions, button presses, and the game itself.
-- **React** - Build a single-page application with React for:
-                - Component-based architecture (e.g., Login, Game, Leaderboard components).
-                - Routing between views (e.g., Login → Game → Leaderboard).
-                - Reactive updates to the leaderboard and game state.
-- **Service** - Backend endpoints to:
-                - Authenticate users (login/logout).
-                - Save and retrieve scores for the leaderboard.
-                - Fetch scores from an external public API (e.g., use the Dog API to display a random image for fun when a game ends).
-- **DB/Login** - User registration and login system:
-                - Securely store hashed passwords in a database.
-                - Display the logged-in user's name on the game and leaderboard pages.
-                - Tables for users (e.g., username, password hash).
-                - Tables for scores (e.g., user ID, score, timestamp).
-- **WebSocket** - Enable real-time updates:
-                - Broadcast leaderboard updates whenever a new score is submitted.
-                - Optional: Broadcast live player stats during gameplay (e.g., "User123 is playing Pacman now!").
+- **HTML** I will use HTML to structure the website, including creating a login page for user authentication, a game page to display the Pacman interface, and a leaderboard page to show user rankings.
+- **CSS** CSS will be used to style the website, ensuring a clean and responsive look. I will apply a retro Pacman aesthetic using themed colors and designs, make the layout responsive for both desktop and mobile users, and incorporate animations for transitions, button interactions, and gameplay elements.
+- **React** React will serve as the framework for building a single-page application. I will use a component-based architecture to divide the application into reusable parts, such as the Login, Game, and Leaderboard components. React will also handle routing between pages and provide reactive updates to the leaderboard and game state.
+- **Service** The backend services will handle essential functions, including user authentication (login and logout), saving and retrieving scores for the leaderboard, and interacting with an external API, such as the Dog API, to fetch random images for fun after a game ends.
+- **DB/Login** A database will store user information and scores. I will securely store hashed passwords in the database, display the logged-in user’s name on the game and leaderboard pages, and organize the data into tables for users (e.g., username and password hash) and scores (e.g., user ID, score, and timestamp).
+- **WebSocket** I will use WebSockets to enable real-time communication. This will include broadcasting leaderboard updates whenever a new score is submitted. Optionally, I will also broadcast live player activity, such as notifying others when a user starts playing Pacman.
 
 ## 🚀 AWS deliverable
 
