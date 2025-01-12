@@ -18,15 +18,15 @@ A brief description of the application here. Lorem ipsum dolor sit amet, consect
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
+- [x] Description of key features
+- [x] Description of how you will use each technology
+- [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Bring the nostalgia of Pacman into the modern era with our real-time gaming platform! Users can log in, play a fast-paced Pacman game, and compete for top spots on a dynamic leaderboard. Our platform is lightweight, interactive, and perfect for casual gamers who love a challenge.
 
 ### Design
 
@@ -43,20 +43,38 @@ sequenceDiagram
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Login/Logout System: Allow users to register, log in securely, and view their profile.
+- Pacman Game: A fun and interactive browser-based game with animated gameplay.
+- Leaderboard: A database-powered leaderboard that displays scores of all players and updates in real time.
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - Structure the website, including:
+                - A login page.
+                - The game page with the Pacman interface.
+                - The leaderboard page showing user rankings.
+- **CSS** - Style the website for a clean and responsive look:
+                - Themed styling for the game (e.g., a retro Pacman aesthetic).
+                - Responsive design for desktop and mobile users.
+                - Animations for transitions, button presses, and the game itself.
+- **React** - Build a single-page application with React for:
+                - Component-based architecture (e.g., Login, Game, Leaderboard components).
+                - Routing between views (e.g., Login → Game → Leaderboard).
+                - Reactive updates to the leaderboard and game state.
+- **Service** - Backend endpoints to:
+                - Authenticate users (login/logout).
+                - Save and retrieve scores for the leaderboard.
+                - Fetch scores from an external public API (e.g., use the Dog API to display a random image for fun when a game ends).
+- **DB/Login** - User registration and login system:
+                - Securely store hashed passwords in a database.
+                - Display the logged-in user's name on the game and leaderboard pages.
+                - Tables for users (e.g., username, password hash).
+                - Tables for scores (e.g., user ID, score, timestamp).
+- **WebSocket** - Enable real-time updates:
+                - Broadcast leaderboard updates whenever a new score is submitted.
+                - Optional: Broadcast live player stats during gameplay (e.g., "User123 is playing Pacman now!").
 
 ## 🚀 AWS deliverable
 
