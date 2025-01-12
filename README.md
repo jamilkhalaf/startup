@@ -32,7 +32,11 @@ Bring the nostalgia of Pacman into the modern era with our real-time gaming plat
 
 ![Design image](placeholder.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The Login Page includes fields for entering a username and password. A "Login" button redirects authenticated users to the Game page. Additionally, there is an optional "Sign Up" button for new users to register an account.
+
+The Game Page features the Pacman game interface. Users can click a "Start Game" button to initialize the game. Player statistics, such as the current score and remaining lives, are displayed either on the side or at the top of the screen. A "Quit Game" button is provided to navigate to the Leaderboard page.
+
+The Leaderboard Page displays a table of high scores for all users, with the logged-in user's rank and score highlighted in the list. This page also includes a "Play Again" button to allow users to return to the Game page. For added fun, an image fetched from the external Dog API is displayed whenever a game ends.
 
 ```mermaid
 flowchart TD
