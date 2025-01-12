@@ -52,7 +52,7 @@ sequenceDiagram
 I am going to use the required technologies in the following ways.
 
 - **HTML** - Structure the website, including:
-                - A login page.
+                *** A login page.
                 - The game page with the Pacman interface.
                 - The leaderboard page showing user rankings.
 - **CSS** - Style the website for a clean and responsive look:
