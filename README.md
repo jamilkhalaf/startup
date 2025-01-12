@@ -35,32 +35,33 @@ Bring the nostalgia of Pacman into the modern era with our real-time gaming plat
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ```mermaid
+flowchart TD
     subgraph Login Page
         A1[Username Field] --> A2[Password Field]
         A2 --> A3[Login Button]
-        A3 --> A4[Sign Up Option (Optional)]
+        A3 --> A4[Sign Up Option - Optional]
     end
 
     subgraph Game Page
         B1[Pacman Game Interface]
         B2[Start Game Button]
-        B3[Player Stats (Score, Lives)]
+        B3[Player Stats: Score, Lives]
         B4[Quit Game Button]
         B1 --> B3
         B2 --> B1
     end
 
     subgraph Leaderboard Page
-        C1[Leaderboard Table (User Scores)]
+        C1[Leaderboard Table: User Scores]
         C2[Highlighted User Stats]
         C3[Play Again Button]
-        C4[Random Dog API Image]
         C3 --> B1
         C4 --> C1
     end
 
     A3 --> B2
     B4 --> C1
+
 ```
 
 
