@@ -74,6 +74,7 @@ textarea: Multiline text input (<textarea></textarea>).
 label: Label for an input (<label for="range">Range: </label>).
 output: Displays the result of input (<output for="range">0</output>).
 meter: Displays a value within a known range (<meter min="0" max="100" value="50"></meter>).
+
 Form Element:
 
 Forms are used to submit input data, especially before JavaScript. In modern web apps, JavaScript often handles data dynamically without sending it to a server.
@@ -86,6 +87,7 @@ Edit
   <textarea id="ta" name="ta-id">Some text</textarea>
   <button type="submit">Submit</button>
 </form>
+
 Input Element Types:
 
 Textual: text, password, email, tel, url
