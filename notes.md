@@ -55,9 +55,9 @@ Provides structure and content for web applications.
 HTML Structure Overview:
 
 Body contains three children.
-Header
-Main
-Footer
+Header,
+Main,
+Footer,
 
 Block vs Inline Elements:
 
