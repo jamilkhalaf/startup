@@ -54,10 +54,10 @@ Provides structure and content for web applications.
 
 HTML Structure Overview:
 
-Body contains three children: <header>, <main>, and <footer>.
-Header: Includes a <p> with a <span> and a <nav> with sub-content (e.g., <div> or <a>).
-Main: Includes multiple <section> elements (e.g., with <ul> lists or <table>) and an <aside> for secondary content.
-Footer: Contains a <div> with a <span> or other content.
+Body contains three children: "<header>, <main>, and <footer>".
+Header: "Includes a <p> with a <span> and a <nav> with sub-content (e.g., <div> or <a>)."
+Main: "Includes multiple <section> elements (e.g., with <ul> lists or <table>) and an <aside> for secondary content."
+Footer: "Contains a <div> with a <span> or other content."
 
 Block vs Inline Elements:
 
