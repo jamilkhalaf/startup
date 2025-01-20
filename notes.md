@@ -66,27 +66,18 @@ Inline elements: Flow within block elements (e.g., <span>, <b>).
 
 HTML Form Elements:
 
-form: Submits input data to a web server (<form action="form.html" method="post">).
-fieldset: Groups related inputs together (<fieldset>   </fieldset>).
-input: Accepts various types of user input (<input type="text">).
-select: Dropdown selection (<select><option>1</option></select>).
-textarea: Multiline text input (<textarea></textarea>).
-label: Label for an input (<label for="range">Range: </label>).
-output: Displays the result of input (<output for="range">0</output>).
-meter: Displays a value within a known range (<meter min="0" max="100" value="50"></meter>).
+form: Submits input data to a web server.
+fieldset: Groups related inputs together.
+input: Accepts various types of user input.
+select: Dropdown selection.
+textarea: Multiline text input.
+label: Label for an input.
+output: Displays the result of input.
+meter: Displays a value within a known range.
 
 Form Element:
 
 Forms are used to submit input data, especially before JavaScript. In modern web apps, JavaScript often handles data dynamically without sending it to a server.
-Example form:
-html
-Copy
-Edit
-<form action="submission.html" method="post">
-  <label for="ta">TextArea: </label>
-  <textarea id="ta" name="ta-id">Some text</textarea>
-  <button type="submit">Submit</button>
-</form>
 
 Input Element Types:
 
