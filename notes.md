@@ -67,7 +67,7 @@ Inline elements: Flow within block elements (e.g., <span>, <b>).
 HTML Form Elements:
 
 form: Submits input data to a web server (<form action="form.html" method="post">).
-fieldset: Groups related inputs together (<fieldset> ... </fieldset>).
+fieldset: Groups related inputs together (<fieldset>   </fieldset>).
 input: Accepts various types of user input (<input type="text">).
 select: Dropdown selection (<select><option>1</option></select>).
 textarea: Multiline text input (<textarea></textarea>).
