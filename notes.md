@@ -46,4 +46,21 @@ use this command: ssh -i [key pair file] ubuntu@[ip address]
 
 ## HTML Notes
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+I started doing the assignments on the github repo. The first assignment was doing a ford of the codepen and trying out the different html tags.
+
+Purpose of HTML:
+
+Provides structure and content for web applications.
+Key structural elements: <body>, <header>, <footer>, <main>, <section>, <aside>, <p>, <table>, <ol>/<ul>, <div>, and <span>.
+HTML Structure Overview:
+
+Body contains three children: <header>, <main>, and <footer>.
+Header: Includes a <p> with a <span> and a <nav> with sub-content (e.g., <div> or <a>).
+Main: Includes multiple <section> elements (e.g., with <ul> lists or <table>) and an <aside> for secondary content.
+Footer: Contains a <div> with a <span> or other content.
+
+Block vs Inline Elements:
+
+Block elements: Create distinct content blocks (e.g., <div>, <p>, <section>).
+Inline elements: Flow within block elements (e.g., <span>, <b>).
+
