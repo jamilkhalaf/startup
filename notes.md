@@ -51,42 +51,33 @@ I started doing the assignments on the github repo. The first assignment was doi
 Purpose of HTML:
 
 Provides structure and content for web applications.
-Key structural elements: <body>, <header>, <footer>, <main>, <section>, <aside>, <p>, <table>, <ol>/<ul>, <div>, and <span>.
+
 HTML Structure Overview:
 
-Body contains three children: <header>, <main>, and <footer>.
-Header: Includes a <p> with a <span> and a <nav> with sub-content (e.g., <div> or <a>).
-Main: Includes multiple <section> elements (e.g., with <ul> lists or <table>) and an <aside> for secondary content.
-Footer: Contains a <div> with a <span> or other content.
+Body contains three children.
+Header,
+Main,
+Footer,
 
 Block vs Inline Elements:
 
-Block elements: Create distinct content blocks (e.g., <div>, <p>, <section>).
-Inline elements: Flow within block elements (e.g., <span>, <b>).
+Block elements: Create distinct content blocks.
+Inline elements: Flow within block elements.
 
 HTML Form Elements:
 
-form: Submits input data to a web server (<form action="form.html" method="post">).
-fieldset: Groups related inputs together (<fieldset>   </fieldset>).
-input: Accepts various types of user input (<input type="text">).
-select: Dropdown selection (<select><option>1</option></select>).
-textarea: Multiline text input (<textarea></textarea>).
-label: Label for an input (<label for="range">Range: </label>).
-output: Displays the result of input (<output for="range">0</output>).
-meter: Displays a value within a known range (<meter min="0" max="100" value="50"></meter>).
+form: Submits input data to a web server.
+fieldset: Groups related inputs together.
+input: Accepts various types of user input.
+select: Dropdown selection.
+textarea: Multiline text input.
+label: Label for an input.
+output: Displays the result of input.
+meter: Displays a value within a known range.
 
 Form Element:
 
 Forms are used to submit input data, especially before JavaScript. In modern web apps, JavaScript often handles data dynamically without sending it to a server.
-Example form:
-html
-Copy
-Edit
-<form action="submission.html" method="post">
-  <label for="ta">TextArea: </label>
-  <textarea id="ta" name="ta-id">Some text</textarea>
-  <button type="submit">Submit</button>
-</form>
 
 Input Element Types:
 
