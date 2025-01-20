@@ -51,7 +51,7 @@ I started doing the assignments on the github repo. The first assignment was doi
 Purpose of HTML:
 
 Provides structure and content for web applications.
-Key structural elements: <body>, <header>, <footer>, <main>, <section>, <aside>, <p>, <table>, <ol>/<ul>, <div>, and <span>.
+
 HTML Structure Overview:
 
 Body contains three children: <header>, <main>, and <footer>.
