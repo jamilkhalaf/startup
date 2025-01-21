@@ -99,3 +99,6 @@ HTML5 inputs have built-in validation (e.g., numbers, URLs, email).
 The required attribute ensures inputs are filled before submission.
 pattern allows regex validation for certain input types (text, email, etc.).
 JavaScript should also validate input before submission for better user experience, with visual feedback for validity.
+
+
+to deploy the html files, I used this coomand: ./deployFiles.sh -k ~/Desktop/jamilk.pem -h jamil260.click -s startup
