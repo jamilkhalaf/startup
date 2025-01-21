@@ -2,7 +2,7 @@
 
 [My Notes](notes.md)
 
-This application is a modern web-based platform designed to combine nostalgia with technology. It features a user-friendly login system, an engaging Pacman game, and a competitive leaderboard that updates in real time. The platform ensures a seamless experience for players while showcasing key web development concepts, including responsive design, authentication, database integration, and real-time communication. By blending classic gameplay with contemporary web technologies, the application aims to provide entertainment while demonstrating technical excellence in web development.
+This application is a modern web-based platform designed to combine nostalgia with technology. It features a user-friendly login system, an engaging memory game, and a competitive leaderboard that updates in real time. The platform ensures a seamless experience for players while showcasing key web development concepts, including responsive design, authentication, database integration, and real-time communication. By blending classic gameplay with contemporary web technologies, the application aims to provide entertainment while demonstrating technical excellence in web development.
 
 
 > [!NOTE]
@@ -34,7 +34,7 @@ Bring the nostalgia of Pacman into the modern era with our real-time gaming plat
 
 The Login Page includes fields for entering a username and password. A "Login" button redirects authenticated users to the Game page. Additionally, there is an optional "Sign Up" button for new users to register an account.
 
-The Game Page features the Pacman game interface. Users can click a "Start Game" button to initialize the game. Player statistics, such as the current score and remaining lives, are displayed either on the side or at the top of the screen. A "Quit Game" button is provided to navigate to the Leaderboard page.
+The Game Page features the Memory game interface. Users can click a "Start Game" button to initialize the game. Player statistics, such as the current score and time elapsed, are displayed either on the side or at the top of the screen. A "Restart Game" button is provided to navigate to the Leaderboard page.
 
 The Leaderboard Page displays a table of high scores for all users, with the logged-in user's rank and score highlighted in the list. This page also includes a "Play Again" button to allow users to return to the Game page. For added fun, an image fetched from the external Dog API is displayed whenever a game ends.
 
@@ -47,10 +47,10 @@ flowchart TD
     end
 
     subgraph Game Page
-        B1[Pacman Game Interface]
+        B1[memory Game Interface]
         B2[Start Game Button]
-        B3[Player Stats: Score, Lives]
-        B4[Quit Game Button]
+        B3[Player Stats: Time Elapsed]
+        B4[Restart Game Button]
         B1 --> B3
         B2 --> B1
     end
@@ -74,19 +74,19 @@ flowchart TD
 ### Key features
 
 - Login/Logout System: Allow users to register, log in securely, and view their profile.
-- Pacman Game: A fun and interactive browser-based game with animated gameplay.
+- Memory Game: A fun and interactive browser-based game with animated gameplay.
 - Leaderboard: A database-powered leaderboard that displays scores of all players and updates in real time.
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - I will use HTML to structure the website, including creating a login page for user authentication, a game page to display the Pacman interface, and a leaderboard page to show user rankings.
-- **CSS** - CSS will be used to style the website, ensuring a clean and responsive look. I will apply a retro Pacman aesthetic using themed colors and designs, make the layout responsive for both desktop and mobile users, and incorporate animations for transitions, button interactions, and gameplay elements.
+- **HTML** - I will use HTML to structure the website, including creating a login page for user authentication, a game page to display the memory interface, and a leaderboard page to show user rankings.
+- **CSS** - CSS will be used to style the website, ensuring a clean and responsive look. I will apply a retro memory aesthetic using themed colors and designs, make the layout responsive for both desktop and mobile users, and incorporate animations for transitions, button interactions, and gameplay elements.
 - **React** - React will serve as the framework for building a single-page application. I will use a component-based architecture to divide the application into reusable parts, such as the Login, Game, and Leaderboard components. React will also handle routing between pages and provide reactive updates to the leaderboard and game state.
 - **Service** - The backend services will handle essential functions, including user authentication (login and logout), saving and retrieving scores for the leaderboard, and interacting with an external API, such as the Dog API, to fetch random images for fun after a game ends.
 - **DB/Login** - A database will store user information and scores. I will securely store hashed passwords in the database, display the logged-in user’s name on the game and leaderboard pages, and organize the data into tables for users (e.g., username and password hash) and scores (e.g., user ID, score, and timestamp).
-- **WebSocket** - I will use WebSockets to enable real-time communication. This will include broadcasting leaderboard updates whenever a new score is submitted. Optionally, I will also broadcast live player activity, such as notifying others when a user starts playing Pacman.
+- **WebSocket** - I will use WebSockets to enable real-time communication. This will include broadcasting leaderboard updates whenever a new score is submitted. Optionally, I will also broadcast live player activity, such as notifying others when a user starts playing the memory game.
 
 ## 🚀 AWS deliverable
 
