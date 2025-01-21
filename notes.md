@@ -100,5 +100,6 @@ The required attribute ensures inputs are filled before submission.
 pattern allows regex validation for certain input types (text, email, etc.).
 JavaScript should also validate input before submission for better user experience, with visual feedback for validity.
 
+doing the media assignment I knew how to implement images, audios, and videos by using the mp3 and mp4 links for each.
 
 to deploy the html files, I used this coomand: ./deployFiles.sh -k ~/Desktop/jamilk.pem -h jamil260.click -s startup
