@@ -98,15 +98,15 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **HTML pages** - I did complete this part of the deliverable.
+- [x] **HTML pages** - I did complete this part of the deliverable, I did all pages including login, home, play, about, and leaderboards.
 - [x] **Proper HTML element usage** - I did complete this part of the deliverable.
-- [x] **Links** - I did complete this part of the deliverable.
+- [x] **Links** - I did complete this part of the deliverable. I added a link to my github repo.
 - [x] **Text** - I did complete this part of the deliverable.
-- [x] **3rd party API placeholder** - I did complete this part of the deliverable.
-- [x] **Images** - I did complete this part of the deliverable.
-- [x] **Login placeholder** - I did complete this part of the deliverable.
-- [x] **DB data placeholder** - I did complete this part of the deliverable.
-- [x] **WebSocket placeholder** - I did complete this part of the deliverable.
+- [x] **3rd party API placeholder** - I did complete this part of the deliverable. I will fetch an image when a player wins.
+- [x] **Images** - I did complete this part of the deliverable. I included an image of my memory game.
+- [x] **Login placeholder** - I did complete this part of the deliverable. I added login boxes to authenticate users.
+- [x] **DB data placeholder** - I did complete this part of the deliverable. I added a table to list the leaderboards.
+- [x] **WebSocket placeholder** - I did complete this part of the deliverable. I added a placeholder where a message will appear whenever a player goes online.
 
 ## 🚀 CSS deliverable
 
