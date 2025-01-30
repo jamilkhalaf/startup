@@ -1,0 +1,179 @@
+/* body resizing so it works when minimizing tabs */ 
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
+    margin: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #000; /* Dark background for contrast */
+    color: #fff; /* White text for visibility */
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    position: sticky; /* Keeps the header fixed */
+    top: 0;
+    z-index: 10;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+header ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    margin: 0;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+header ul li a:hover {
+    color: #e9b50b; /* Accent color on hover */
+}
+
+/* Main Styles */
+main {
+    flex-grow: 1; /* Allow the main content to grow and take available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: #f5f5f5;
+}
+
+/* Styling for the leaderboard title */
+h2 {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 60%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table Header */
+thead {
+    background-color: #dc3545; /* Red */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+thead th {
+    padding: 12px;
+}
+
+/* Table Rows */
+tbody tr {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Alternate Row Colors */
+tbody tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Hover Effect */
+tbody tr:hover {
+    background-color: #ffc107; /* Yellow */
+    color: black;
+    cursor: pointer;
+}
+
+/* Table Borders */
+td, th {
+    padding: 12px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000; /* Match header color */
+    color: #fff; /* White text for readability */
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on top */
+    position: relative;
+    z-index: 5;
+}
+
+footer p {
+    margin: 10px 0 0;
+    font-size: 0.9em;
+}
+
+footer .button-icon {
+    margin: 0 auto 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #e9b50b; /* Accent color */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer .icon svg {
+    fill: #fff;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+footer .icon:hover svg {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+
