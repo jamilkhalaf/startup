@@ -1,0 +1,50 @@
+/* Header Styles */
+header {
+    background-color: #000; /* Dark background for contrast */
+    color: #fff; /* White text for visibility */
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    position: sticky; /* Keeps the header fixed */
+    top: 0;
+    z-index: 10;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+header ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    margin: 0;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+header ul li a:hover {
+    color: #e9b50b; /* Accent color on hover */
+}
