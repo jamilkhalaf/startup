@@ -67,6 +67,30 @@ main {
     background-color: #f5f5f5;
 }
 
+/*joke container*/
+#joke-container {
+    width: 50%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #f0f8ff; /* Light background */
+    text-align: center;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+#joke-container h2 {
+    margin: 0 0 10px;
+    color: darkblue;
+    font-size: 24px;
+}
+
+#joke {
+    color: navy;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 /* logout and play buttons */
 button {
     font-size: 18px;
