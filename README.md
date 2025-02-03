@@ -119,6 +119,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Application text content** - I did complete this part of the deliverable.
 - [x] **Application images** - I did complete this part of the deliverable.
 
+My notes are in my notes.md file
+
 ## 🚀 React part 1: Routing deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
