@@ -103,3 +103,14 @@ JavaScript should also validate input before submission for better user experien
 doing the media assignment I knew how to implement images, audios, and videos by using the mp3 and mp4 links for each.
 
 to deploy the html files, I used this coomand: ./deployFiles.sh -k ~/Desktop/jamilk.pem -h jamil260.click -s startup
+
+
+## CSS Notes
+
+From the CSS Selectors section, I learned that selecting elements is fundamental to styling in CSS. By using different types of selectors like element type, class, ID, and attribute selectors, I can apply styles to specific HTML elements. The concept of combinators, like descendant and child combinators, helps target elements based on their relationships in the DOM. Additionally, pseudo-selectors enable dynamic styling based on interactions, such as hover states. The use of CSS selectors is powerful in achieving efficient and specific styling for a web page, and combining different selectors allows for flexible designs.
+
+In the CSS Declarations section, I discovered the wide array of properties and values available in CSS to modify the appearance of elements. For example, background-color, border, and text-related properties help change the visual presentation, while layout properties like display, float, and position control how elements are arranged on the page. Understanding units like pixels, percentages, and viewport-based units is crucial for creating responsive and well-structured layouts. The section helped me appreciate the depth of CSS in styling elements across different contexts and screen sizes.
+
+CSS Animation was another interesting area where I learned how to add interactivity and motion to elements on a webpage. By using the animation property along with keyframes, I can create smooth transitions between different styles over time. The example with the zooming text demonstrated how to animate properties like font size, while more advanced animations can include timing, bouncing effects, and more. CSS animations add a dynamic feel to web applications, improving user experience.
+
+Finally, in the CSS Flexbox section, I learned how to create responsive layouts with the flexbox model. Flexbox allows me to control the alignment and distribution of elements within a container, ensuring they adjust correctly to different screen sizes. By using properties like flex-direction, flex, and align-items, I can create both simple and complex layouts that respond to changes in viewport size. Flexbox is particularly useful for building modern web designs with fluid and adaptable structures, as shown in the example of creating a responsive app layout with a header, footer, and main content area.
