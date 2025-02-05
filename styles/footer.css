@@ -1,0 +1,45 @@
+
+/* Footer Styles */
+footer {
+    background-color: #000; /* Match header color */
+    color: #fff; /* White text for readability */
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on top */
+    position: relative;
+    z-index: 5;
+}
+
+footer p {
+    margin: 10px 0 0;
+    font-size: 0.9em;
+}
+
+footer .button-icon {
+    margin: 0 auto 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #e9b50b; /* Accent color */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer .icon svg {
+    fill: #fff;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+footer .icon:hover svg {
+    transform: scale(1.1); /* Slight zoom effect */
+}
