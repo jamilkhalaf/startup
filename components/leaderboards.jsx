@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startup App - leaderboards</title>
-    <link rel="stylesheet" href="leaderboards.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <h1>Startup App / username Placeholder</h1>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="aboutPostLogin.html">About</a></li>
-                <li><a href="game.html">Play</a></li>
-                <li><a href="leaderboards.html">Leaderboards</a></li>
-            </ul>
-        </nav>
-    </header>
+import React from "react";
 
-    <main>
+import "../styles/leaderboard.css";
+
+const Leaderboard = () => {
+    return (
+        <main class="leaderboard">
         <h2>🏆 Leaderboards 🏆</h2>
         <table>
             <thead>
@@ -72,10 +57,7 @@
             </tbody>
         </table>
     </main>
-
-    <footer>
-        <a href="https://github.com/jamilkhalaf/startup">Jamil's Github Repo</a>
-        <p>&copy; 2025 Startup App. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+    );
+  };
+  
+  export default Leaderboard;

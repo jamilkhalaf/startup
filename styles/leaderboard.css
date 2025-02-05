@@ -1,0 +1,72 @@
+/* Main Styles */
+.leaderboard {
+    flex-grow: 1; /* Allow the main content to grow and take available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: #f5f5f5;
+}
+
+/* Styling for the leaderboard title */
+h2 {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 60%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table Header */
+thead {
+    background-color: #dc3545; /* Red */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+thead th {
+    padding: 12px;
+}
+
+/* Table Rows */
+tbody tr {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Alternate Row Colors */
+tbody tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Hover Effect */
+tbody tr:hover {
+    background-color: #ffc107; /* Yellow */
+    color: black;
+    cursor: pointer;
+}
+
+/* Table Borders */
+td, th {
+    padding: 12px;
+    border-bottom: 2px solid #ddd;
+}

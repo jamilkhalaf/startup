@@ -30,7 +30,7 @@ const Login = () => {
           </form>
   
           <form>
-            <button type="button">Login</button>
+            <button type="button" >Login</button>
             <button type="button">Create</button>
           </form>
         </main>
