@@ -32,28 +32,28 @@ const App = () => {
       <BrowserRouter>
         <div className="app-container">
           {!isLoggedIn && (
-            <body className="app-login">
+            <div className="app-login">
               <HeaderPre />
               <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/about" element={<About />} />
+              <Route path="/" element={<Login handleLogin={handleLogin} handleCreate={handleCreate} />} />               
+              <Route path="/about" element={<About />} />
               </Routes>
               <Footer />
-            </body>
+            </div>
             
           )}
   
           {isLoggedIn && (
-            <body className="app-post-login">
+            <div className="app-post-login">
                 <HeaderPost />
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path="/" element={<Home handleLogout={handleLogout}/>} />
                   <Route path="/about2" element={<About />} />
                   <Route path="/game" element={<Game />} />
                   <Route path="/leaderboards" element={<Leaderboard />} /> 
                 </Routes>
                 <Footer />
-            </body>
+            </div>
           )}
         </div>
       </BrowserRouter>

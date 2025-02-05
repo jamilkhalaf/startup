@@ -1,11 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; 
 
 
 import "../styles/home.css";
 
-const Home = () => {
+const Home = ({ handleLogout}) => {
     const [joke, setJoke] = useState("");
+    const navigate = useNavigate(); 
 
     // Function to fetch the joke
     const fetchJoke = async () => {
@@ -25,6 +27,10 @@ const Home = () => {
     useEffect(() => {
         fetchJoke();
     }, []);
+
+    const handlePlayClick = () => {
+        navigate("/game");
+    };
     return (
         <main class="home">
             <div id="joke-container">
@@ -32,8 +38,8 @@ const Home = () => {
                 <div id="joke">{joke}</div>
             </div>
             <form>
-                <button type="button">Logout</button>
-                <button type="button">play</button>
+                <button type="button" onClick={handleLogout}>Logout</button>
+                <button type="button"onClick={handlePlayClick}>play</button>
             </form>
         </main>
     );

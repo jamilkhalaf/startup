@@ -2,7 +2,7 @@ import React from "react";
 
 import "../styles/login.css";
 
-const Login = () => {
+const Login = ({ handleLogin, handleCreate }) => {
     return (
         <main class="login">
           <form>
@@ -30,8 +30,8 @@ const Login = () => {
           </form>
   
           <form>
-            <button type="button" >Login</button>
-            <button type="button">Create</button>
+            <button type="button" onClick={handleLogin}>Login</button>
+            <button type="button" onClick={handleCreate}>Create</button>
           </form>
         </main>
     );
