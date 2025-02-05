@@ -4,7 +4,7 @@ import "../styles/login.css";
 
 const Login = () => {
     return (
-        <main>
+        <main class="login">
           <form>
             <div className="input__container username-container">
               <div className="shadow__input"></div>

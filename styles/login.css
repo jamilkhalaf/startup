@@ -2,7 +2,7 @@
 
 
 /* Main Styles */
-main {
+.login {
 
     flex-grow: 1; /* Allow the main content to grow and take available space */
     display: flex;

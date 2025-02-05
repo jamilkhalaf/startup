@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import Header from "./components/headerPreLogin";
 import Footer from "./components/footer";
-// import About from "./About"; 
+import About from "./components/about"; 
 // import AboutPostLogin from "./AboutPostLogin";
 // import Home from "./Home";
 // import Game from "./Game";
@@ -31,7 +31,7 @@ const App = () => {
               <Header />
               <Routes>
                 <Route path="/" element={<Login />} />
-                {/* <Route path="/about" element={<About />} /> */}
+                <Route path="/about" element={<About />} />
               </Routes>
               <Footer />
             </body>
