@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "../styles/game.css";
+import { initializeGame } from "./gamejavascript";
 
-const Home = () => {
+const Game = () => {
+    useEffect(() => {
+        initializeGame();
+      }, []);
     return (
         <main class="game">
         <h2>Memory Game</h2>
         <p>The game will appear below. Get ready to have some fun!</p>
     
-        <div>
-            <img src="https://play-lh.googleusercontent.com/uif9mSAO8Q6xylyDwtzRuJgBRTV8CIeJPmQhCswddotoYMfO1OoJPUHn_VP3w64Q7Q">
-            </img>
+        <div class="myGame">
+            <h3>Score: <span id="result"></span></h3>
+            <div id="timeElasped">Time: <span id="time"></span></div>
+            <button id="restartButton">Restart Game</button>
+            <div className="grid-container">
+                    <div className="grid"></div>
+            </div>
         </div>
     
         <div class="placeholder-container">
@@ -21,4 +29,4 @@ const Home = () => {
     );
   };
   
-  export default Home;
+  export default Game;

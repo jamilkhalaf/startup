@@ -57,7 +57,7 @@ const App = () => {
                 <HeaderPost />
                 <Routes>
                   <Route path="/" element={<Home handleLogout={handleLogout}/>} />
-                  <Route path="/about2" element={<About />} />
+                  <Route path="/about" element={<About />} />
                   <Route path="/game" element={<Game />} />
                   <Route path="/leaderboards" element={<Leaderboard />} /> 
                 </Routes>
