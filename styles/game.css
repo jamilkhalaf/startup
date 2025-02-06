@@ -1,4 +1,4 @@
-.game {
+main {
     flex-grow: 1; /* Allow main content to expand */
     display: flex;
     flex-direction: column;
@@ -13,16 +13,18 @@
 }
 
 /* Style for text above the image */
-main h2 {
+main h3 {
     font-size: 2em;
     font-weight: bold;
     color: #333;
 }
 
-main p {
-    font-size: 1.2em;
-    color: #555;
+#timeElasped {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
 }
+
 
 /* Center the image */
 main div img {
@@ -67,8 +69,8 @@ main div img {
     border-radius: 5px;
     cursor: pointer;
     position: absolute;
-    bottom: 120px; /* Positioned lower */
-    left: 51%;
+    bottom: 150px; /* Positioned lower */
+    left: 50%;
     transform: translateX(-50%);
   }
   
