@@ -9,7 +9,7 @@ const Home = () => {
         <p>The game will appear below. Get ready to have some fun!</p>
     
         <div>
-            <img src="../images/image.png">
+            <img src="https://play-lh.googleusercontent.com/uif9mSAO8Q6xylyDwtzRuJgBRTV8CIeJPmQhCswddotoYMfO1OoJPUHn_VP3w64Q7Q">
             </img>
         </div>
     
