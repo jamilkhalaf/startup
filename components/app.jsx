@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import HeaderPre from "./headerPreLogin";
@@ -14,19 +14,27 @@ import HeaderPost from "./headerPostLogin";
 import Login from "./login";
 
 const App = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(() => {
+      const savedLoginState = localStorage.getItem("isLoggedIn");
+      return savedLoginState === "true";
+    });
+
+    useEffect(() => {
+      localStorage.setItem("isLoggedIn", isLoggedIn);
+    }, [isLoggedIn]);
 
     const handleLogin = () => {
       setIsLoggedIn(true);
     };
 
     const handleCreate = () => {
-        setIsLoggedIn(true);
+      setIsLoggedIn(true);
     };
 
     const handleLogout = () => {
       setIsLoggedIn(false);
-  };
+      localStorage.removeItem("isLoggedIn"); // Clear the login state from local storage
+    };
   
     return (
       <BrowserRouter>
