@@ -19,6 +19,7 @@ const App = () => {
       return savedLoginState === "true";
     });
 
+    // Update local storage whenever the login state changes
     useEffect(() => {
       localStorage.setItem("isLoggedIn", isLoggedIn);
     }, [isLoggedIn]);
