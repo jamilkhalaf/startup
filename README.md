@@ -125,8 +125,8 @@ My notes are in my notes.md file
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **Bundled using Vite** - I did not complete this part of the deliverable.
-- [x] **Components** - I did not complete this part of the deliverable.
+- [x] **Bundled using Vite** - I did complete this part of the deliverable.
+- [x] **Components** - I did complete this part of the deliverable.
 - [x] **Router** - Routing between login and voting components.
 
 My notes are in my notes.md file
