@@ -129,6 +129,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Components** - I did not complete this part of the deliverable.
 - [x] **Router** - Routing between login and voting components.
 
+My notes are in my notes.md file
+
 ## 🚀 React part 2: Reactivity
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.

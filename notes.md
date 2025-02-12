@@ -114,3 +114,26 @@ In the CSS Declarations section, I discovered the wide array of properties and v
 CSS Animation was another interesting area where I learned how to add interactivity and motion to elements on a webpage. By using the animation property along with keyframes, I can create smooth transitions between different styles over time. The example with the zooming text demonstrated how to animate properties like font size, while more advanced animations can include timing, bouncing effects, and more. CSS animations add a dynamic feel to web applications, improving user experience.
 
 Finally, in the CSS Flexbox section, I learned how to create responsive layouts with the flexbox model. Flexbox allows me to control the alignment and distribution of elements within a container, ensuring they adjust correctly to different screen sizes. By using properties like flex-direction, flex, and align-items, I can create both simple and complex layouts that respond to changes in viewport size. Flexbox is particularly useful for building modern web designs with fluid and adaptable structures, as shown in the example of creating a responsive app layout with a header, footer, and main content area.
+
+## React part 1 notes
+
+Components Overview
+React components are the building blocks of a React application, responsible for generating and managing the user interface. They use JSX to define structure and can be styled using CSS. Components can be either functional or class-based, with functional components being the more modern approach.
+
+Styling and Structure
+Components can be styled using external CSS files, inline styles, or styled-components. Instead of the standard class attribute in HTML, React uses className to apply CSS classes. Components can be combined and nested to create a structured UI.
+
+Properties (Props)
+Props allow data to be passed between components, making them reusable and dynamic. They are immutable within the component receiving them, meaning their values cannot be changed inside that component. Props help in creating flexible and modular applications.
+
+State Management
+State enables components to store and manage data that changes over time. React updates the component automatically when the state changes. The useState hook is commonly used in functional components to manage state.
+
+Reactivity in React
+React updates the UI whenever the state or props change. This reactivity ensures that the application stays in sync with data changes, reducing the need for manual DOM manipulation. React's virtual DOM improves performance by only updating parts of the UI that actually change.
+
+React Router and Navigation
+React Router enables navigation between different views in a single-page application without requiring a full page reload. It uses routes to define different pages and components, making navigation smooth and efficient.
+
+Importance of Routing
+Routing allows users to navigate an application efficiently. Instead of loading an entirely new page, React dynamically updates content, improving performance and user experience. The router helps manage dynamic URLs, including passing parameters to components based on the route.
