@@ -117,23 +117,16 @@ Finally, in the CSS Flexbox section, I learned how to create responsive layouts 
 
 ## React part 1 notes
 
-Components Overview
 React components are the building blocks of a React application, responsible for generating and managing the user interface. They use JSX to define structure and can be styled using CSS. Components can be either functional or class-based, with functional components being the more modern approach.
 
-Styling and Structure
 Components can be styled using external CSS files, inline styles, or styled-components. Instead of the standard class attribute in HTML, React uses className to apply CSS classes. Components can be combined and nested to create a structured UI.
 
-Properties (Props)
 Props allow data to be passed between components, making them reusable and dynamic. They are immutable within the component receiving them, meaning their values cannot be changed inside that component. Props help in creating flexible and modular applications.
 
-State Management
 State enables components to store and manage data that changes over time. React updates the component automatically when the state changes. The useState hook is commonly used in functional components to manage state.
 
-Reactivity in React
 React updates the UI whenever the state or props change. This reactivity ensures that the application stays in sync with data changes, reducing the need for manual DOM manipulation. React's virtual DOM improves performance by only updating parts of the UI that actually change.
 
-React Router and Navigation
 React Router enables navigation between different views in a single-page application without requiring a full page reload. It uses routes to define different pages and components, making navigation smooth and efficient.
 
-Importance of Routing
 Routing allows users to navigate an application efficiently. Instead of loading an entirely new page, React dynamically updates content, improving performance and user experience. The router helps manage dynamic URLs, including passing parameters to components based on the route.
