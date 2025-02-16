@@ -3,11 +3,16 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; 
 
 
-import "./home.css";
+import "./authenticated.css";
 
-const Home = ({ handleLogout}) => {
+export function Authenticated(props) {
+    const navigate = useNavigate();
+
+    function logout() {
+        localStorage.removeItem('userName');
+        props.onLogout();
+    }
     const [joke, setJoke] = useState("");
-    const navigate = useNavigate(); 
 
     // Function to fetch the joke
     const fetchJoke = async () => {
@@ -32,17 +37,16 @@ const Home = ({ handleLogout}) => {
         navigate("/game");
     };
     return (
-        <main class="home">
-            <div id="joke-container">
-                <h2>Random Joke of the Day</h2>
-                <div id="joke">{joke}</div>
-            </div>
-            <form>
-                <button type="button" onClick={handleLogout}>Logout</button>
-                <button type="button"onClick={handlePlayClick}>play</button>
-            </form>
+        <main className="home">
+        <div id="joke-container">
+            <h2>Random Joke of the Day</h2>
+            <div id="joke">{joke}</div>
+        </div>
+        <form>
+            <button type="button" onClick={logout}>Logout</button>
+            <button type="button"onClick={handlePlayClick}>play</button>
+        </form>
         </main>
     );
   };
   
-  export default Home;

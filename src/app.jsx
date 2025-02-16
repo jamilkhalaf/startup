@@ -1,72 +1,48 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HeaderPre from "./header/headerPreLogin";
+import HeaderPost from "./header/headerPostLogin";
 import Footer from "./footer/footer";
-import About from "./about/about"; 
-import Home from "./home/home";
+import About from "./about/about";
 import Game from "./game/game";
 import Leaderboard from "./leaderboard/leaderboards";
-import HeaderPost from "./header/headerPostLogin";
-
-
-import Login from "./login/login";
+import { AuthState } from "./login/authState";
+import { Login } from "./login/login";
 
 const App = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(() => {
-      const savedLoginState = localStorage.getItem("isLoggedIn");
-      return savedLoginState === "true";
-    });
+  const [userName, setUserName] = React.useState(localStorage.getItem("userName") || "");
+  const [authState, setAuthState] = React.useState(userName ? AuthState.Authenticated : AuthState.Unauthenticated);
 
-    // Update local storage whenever the login state changes
-    useEffect(() => {
-      localStorage.setItem("isLoggedIn", isLoggedIn);
-    }, [isLoggedIn]);
-
-    const handleLogin = () => {
-      setIsLoggedIn(true);
-    };
-
-    const handleCreate = () => {
-      setIsLoggedIn(true);
-    };
-
-    const handleLogout = () => {
-      setIsLoggedIn(false);
-      localStorage.removeItem("isLoggedIn"); // Clear the login state from local storage
-    };
-  
-    return (
-      <BrowserRouter>
-        <div className="app-container">
-          {!isLoggedIn && (
-            <div className="app-login">
-              <HeaderPre />
-              <Routes>
-              <Route path="/" element={<Login handleLogin={handleLogin} handleCreate={handleCreate} />} />               
-              <Route path="/about" element={<About />} />
-              </Routes>
-              <Footer />
-            </div>
-            
+  return (
+    <BrowserRouter>
+      <div className="app-container">
+        {authState === AuthState.Authenticated ? <HeaderPost /> : <HeaderPre />}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Login
+                userName={userName}
+                authState={authState}
+                onAuthChange={(userName, newAuthState) => {
+                  setAuthState(newAuthState);
+                  setUserName(userName);
+                }}
+              />
+            }
+          />
+          <Route path="/about" element={<About />} />
+          {authState === AuthState.Authenticated && (
+            <>
+              <Route path="/game" element={<Game />} />
+              <Route path="/leaderboards" element={<Leaderboard />} />
+            </>
           )}
-  
-          {isLoggedIn && (
-            <div className="app-post-login">
-                <HeaderPost />
-                <Routes>
-                  <Route path="/" element={<Home handleLogout={handleLogout}/>} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/game" element={<Game />} />
-                  <Route path="/leaderboards" element={<Leaderboard />} /> 
-                </Routes>
-                <Footer />
-            </div>
-          )}
-        </div>
-      </BrowserRouter>
-    );
-  };
-  
-  export default App;
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
+  );
+};
+
+export default App;
