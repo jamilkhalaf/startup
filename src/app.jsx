@@ -12,6 +12,7 @@ import { Login } from "./login/login";
 const App = () => {
   const [userName, setUserName] = React.useState(localStorage.getItem("userName") || "");
   const [authState, setAuthState] = React.useState(userName ? AuthState.Authenticated : AuthState.Unauthenticated);
+  const currentUser = "example websocket online player";
 
   return (
     <BrowserRouter>
@@ -34,7 +35,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           {authState === AuthState.Authenticated && (
             <>
-              <Route path="/game" element={<Game />} />
+              <Route path="/game" element={<Game userName={currentUser}/>} />
               <Route path="/leaderboards" element={<Leaderboard />} />
             </>
           )}

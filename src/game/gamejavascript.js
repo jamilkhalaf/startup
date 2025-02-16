@@ -1,5 +1,5 @@
 // src/game.js
-export function initializeGame() {
+export function initializeGame(playerName) {
     const cardArray = [
       { name: 'image1', img: 'https://www.usatoday.com/gcdn/authoring/authoring-images/2024/10/16/USAT/75705761007-8932-medium-friesuuidpngcoredownload.png?crop=1998,1499,x0,y347' },
       { name: 'image2', img: 'https://www.thespruceeats.com/thmb/UpVWAcHnFEe_KvQpYsR1a7U-WY0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-your-best-grilled-burger-recipe-7511041-hero-C-c5080fa5f97c4c2b908968527f8a851b.jpg' },
@@ -25,7 +25,6 @@ export function initializeGame() {
     
     const resultDisplay = document.querySelector('#result');
     const timeDisplay = document.querySelector('#time');
-    const playerName = 'Player 1'; // Define player name for sending message
 
   
     let cardsChosen = [];
@@ -108,6 +107,7 @@ export function initializeGame() {
       createBoard();
     }
 
+    window.gameRestart = restartGame;
     
   
     document.querySelector('#restartButton').addEventListener('click', restartGame);
