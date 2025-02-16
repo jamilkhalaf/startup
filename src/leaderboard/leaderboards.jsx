@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/leaderboard.css";
+import "./leaderboard.css";
 
 const Leaderboard = () => {
     return (

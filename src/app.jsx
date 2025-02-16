@@ -2,16 +2,16 @@ import React from "react";
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import HeaderPre from "./headerPreLogin";
-import Footer from "./footer";
-import About from "./about"; 
-import Home from "./home";
-import Game from "./game";
-import Leaderboard from "./leaderboards";
-import HeaderPost from "./headerPostLogin";
+import HeaderPre from "./header/headerPreLogin";
+import Footer from "./footer/footer";
+import About from "./about/about"; 
+import Home from "./home/home";
+import Game from "./game/game";
+import Leaderboard from "./leaderboard/leaderboards";
+import HeaderPost from "./header/headerPostLogin";
 
 
-import Login from "./login";
+import Login from "./login/login";
 
 const App = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(() => {

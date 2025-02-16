@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; 
 
 
-import "../styles/home.css";
+import "./home.css";
 
 const Home = ({ handleLogout}) => {
     const [joke, setJoke] = useState("");

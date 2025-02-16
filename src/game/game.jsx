@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import "../styles/game.css";
+import "./game.css";
 import { initializeGame } from "./gamejavascript";
 
 const Game = () => {
