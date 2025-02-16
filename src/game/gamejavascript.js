@@ -25,6 +25,8 @@ export function initializeGame() {
     
     const resultDisplay = document.querySelector('#result');
     const timeDisplay = document.querySelector('#time');
+    const playerName = 'Player 1'; // Define player name for sending message
+
   
     let cardsChosen = [];
     let cardsChosenId = [];
@@ -83,9 +85,18 @@ export function initializeGame() {
       timerInterval = setInterval(() => {
         const timeElapsed = Math.floor((Date.now() - startTime) / 1000);
         timeDisplay.textContent = timeElapsed + 's';
+        sendWebSocketUpdate(playerName, resultDisplay.textContent, timeElapsed);
       }, 1000);
     }
   
+
+    function sendWebSocketUpdate(playerName, score, time) {
+      // Mock WebSocket message
+      const message = `${playerName}: Score = ${score}, Time = ${time}s`;
+      document.querySelector('#websocket-placeholder').textContent = message;
+    }
+
+
     function restartGame() {
       startTime = null; 
       clearInterval(timerInterval);
@@ -96,6 +107,8 @@ export function initializeGame() {
       grid.innerHTML = '';
       createBoard();
     }
+
+    
   
     document.querySelector('#restartButton').addEventListener('click', restartGame);
   
