@@ -8,11 +8,16 @@ export function Unauthenticated(props) {
   const [password, setPassword] = React.useState('');
 
   async function loginUser() {
-    localStorage.setItem('userName', userName);
-    props.onLogin(userName);
+    if (localStorage.getItem(userName)) {
+      localStorage.setItem('userName', userName);
+      props.onLogin(userName);
+    } else {
+      alert("User not found. Please create an account.");
+    }
   }
 
   async function createUser() {
+    localStorage.setItem(userName, JSON.stringify({ password }));
     localStorage.setItem('userName', userName);
     props.onLogin(userName);
   }
