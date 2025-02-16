@@ -1,17 +1,51 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; 
+import { useRef } from "react";
+import { useCallback } from "react";
 
 
 import "./authenticated.css";
 
 export function Authenticated(props) {
     const navigate = useNavigate();
+    const timerIdRef = useRef(null);
 
     function logout() {
         localStorage.removeItem('userName');
         props.onLogout();
     }
+    function resetTimer() {
+        // Clear any existing timer
+        if (timerIdRef.current) {
+          clearTimeout(timerIdRef.current);
+        }
+        timerIdRef.current = setTimeout(() => {
+          logout();
+        }, 30000);
+      }
+      useEffect(() => {
+        // List of events to consider as "activity"
+        const events = ["mousemove", "keydown", "mousedown", "touchstart"];
+    
+        // Attach event listeners to the window to monitor user activity
+        events.forEach((event) => {
+          window.addEventListener(event, resetTimer);
+        });
+    
+        // Start the initial timer
+        resetTimer();
+    
+        // Cleanup function: Remove event listeners and clear timer on unmount
+        return () => {
+          events.forEach((event) => {
+            window.removeEventListener(event, resetTimer);
+          });
+          if (timerIdRef.current) {
+            clearTimeout(timerIdRef.current);
+          }
+        };
+      }, []);
     const [joke, setJoke] = useState("");
 
     // Function to fetch the joke
