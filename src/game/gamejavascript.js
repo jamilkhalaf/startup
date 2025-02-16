@@ -53,6 +53,8 @@ export function initializeGame(playerName) {
         card.setAttribute('src', cardArray[cardId].img);
         cardsChosen.push(cardArray[cardId].name);
         cardsChosenId.push(cardId);
+        const flipSound = new Audio('../public/flipCard.mp3');
+        flipSound.play();
         if (cardsChosen.length === 2) {
           setTimeout(checkMatch, 500);
         }
@@ -63,12 +65,16 @@ export function initializeGame(playerName) {
       const cards = document.querySelectorAll('img');
       const [firstCardId, secondCardId] = cardsChosenId;
       if (cardsChosen[0] === cardsChosen[1]) {
+        const matchSound = new Audio('../public/matchSound.wav');
+        matchSound.play();
         cards[firstCardId].setAttribute('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6ziXbSrZqhY82T31tWMqsPZBHyxoNie6B4w&s');
         cards[secondCardId].setAttribute('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6ziXbSrZqhY82T31tWMqsPZBHyxoNie6B4w&s');
         cardsWon.push(firstCardId, secondCardId);
         resultDisplay.textContent = cardsWon.length / 2;
         if (cardsWon.length / 2 === 8) {
           clearInterval(timerInterval); // Stop timer
+          const victorySound = new Audio('../public/victory.mp3');
+          victorySound.play();
           alert("You won! See how you did on the leaderboard section.");
         }
       } else {
@@ -107,7 +113,7 @@ export function initializeGame(playerName) {
       createBoard();
     }
 
-    window.gameRestart = restartGame;
+    
     
   
     document.querySelector('#restartButton').addEventListener('click', restartGame);
