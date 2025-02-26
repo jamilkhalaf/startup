@@ -130,3 +130,13 @@ React updates the UI whenever the state or props change. This reactivity ensures
 React Router enables navigation between different views in a single-page application without requiring a full page reload. It uses routes to define different pages and components, making navigation smooth and efficient.
 
 Routing allows users to navigate an application efficiently. Instead of loading an entirely new page, React dynamically updates content, improving performance and user experience. The router helps manage dynamic URLs, including passing parameters to components based on the route.
+
+## React part 2 notes
+
+For React Part 2, I focused on making my startup project fully interactive and reactive. This required implementing user interactivity and ensuring the interface updates dynamically based on user actions and data changes. A big part of this process involved managing state and props in React to reflect real-time updates in the UI.
+
+To simulate parts of the application that would eventually rely on backend services or third-party APIs, I used techniques like localStorage to temporarily store user data and settings. I also created hardcoded responses to mimic API behavior and used time-based functions like setInterval to simulate real-time data updates, like live messages or changing data.
+
+Ensuring reactivity was crucial, so I spent time managing component state and setting up event handling. I made sure that any changes in state were immediately reflected in the UI and that the application responded smoothly to user interactions.
+
+As I worked through these features, I committed my changes frequently and pushed updates to my GitHub repository. I also documented my progress and learnings in my notes to keep track of the new concepts and techniques I implemented. This helped me build a strong foundation for future improvements and collaborations on the project.
