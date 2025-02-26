@@ -72,7 +72,7 @@ export function initializeGame(playerName) {
         cardsWon.push(firstCardId, secondCardId);
         resultDisplay.textContent = cardsWon.length / 2;
         if (cardsWon.length / 2 === 8) {
-          clearInterval(timerInterval); // Stop timer
+          clearInterval(timerInterval); // Stop time
           const victorySound = new Audio('/victory.mp3');
           victorySound.play();
           alert("You won! See how you did on the leaderboard section.");
