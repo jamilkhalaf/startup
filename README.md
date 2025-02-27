@@ -135,8 +135,8 @@ My notes are in my notes.md file
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **All functionality implemented or mocked out** - I did not complete this part of the deliverable.
-- [x] **Hooks** - I did not complete this part of the deliverable.
+- [x] **All functionality implemented or mocked out** - I did complete this part of the deliverable. I mocked the login and create functionality storing usernames in local strorage. I also mocked the websocket functionality when it changes the moment a game starts. 
+- [x] **Hooks** - I did complete this part of the deliverable. I implemented hooks while using useState and useEffect. I used them in fetching the joke I put in my login page as well as using that to make the user automatically logout if being unactive for a period of 30s. 
 
 My notes are in my notes.md file
 
