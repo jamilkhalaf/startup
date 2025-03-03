@@ -6,6 +6,8 @@ import "./unauthenticated.css";
 export function Unauthenticated(props) {
   const [userName, setUserName] = React.useState(props.userName);
   const [password, setPassword] = React.useState('');
+  const [displayError, setDisplayError] = React.useState('');
+
 
   async function loginUser() {
     loginOrCreate('/api/auth', 'login');
@@ -34,6 +36,7 @@ export function Unauthenticated(props) {
     } else {
       const body = await response.json();
       setDisplayError(`⚠ Error: ${body.msg}`);
+      alert(`⚠ Error: ${body.msg}`);
     }
   }
 
