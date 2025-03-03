@@ -11,10 +11,21 @@ export function Authenticated(props) {
     const navigate = useNavigate();
     const timerIdRef = useRef(null);
 
-    function logout() {
-        localStorage.removeItem('userName');
-        props.onLogout();
-    }
+    async function logout() {
+      // Send a request to the server to logout
+      const response = await fetch('/api/auth', {
+          method: 'DELETE', // The delete method for logging out
+          credentials: 'include', // Make sure cookies are included
+      });
+      
+      if (response.ok) {
+          localStorage.removeItem('userName');
+          props.onLogout();
+          navigate('/');  // Redirect to the login page or home page
+      } else {
+          alert('Error logging out. Please try again.');
+      }
+  }
     function resetTimer() {
         // Clear any existing timer
         if (timerIdRef.current) {

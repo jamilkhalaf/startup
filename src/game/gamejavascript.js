@@ -76,6 +76,7 @@ export function initializeGame(playerName) {
           const victorySound = new Audio('/victory.mp3');
           victorySound.play();
           alert("You won! See how you did on the leaderboard section.");
+          endGame(playerName, Math.floor((Date.now() - startTime) / 1000));
         }
       } else {
         cards[firstCardId].setAttribute('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGTgLUsSYpPBIYSdUP9a3L1Ve0v_Ud-eXbxw&s');
@@ -111,6 +112,32 @@ export function initializeGame(playerName) {
       cardArray.sort(() => 0.5 - Math.random());
       grid.innerHTML = '';
       createBoard();
+    }
+
+    function endGame(playerName, time) {
+      fetch('/api/leaderboard', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ playerName, time }),
+      })
+        .then(() => updateLeaderboard())
+        .catch(error => console.error('Error submitting score:', error));
+    }
+    
+    function updateLeaderboard() {
+      fetch('/api/leaderboard')
+        .then(response => response.json())
+        .then(data => {
+          const leaderboardTable = document.querySelector('#leaderboard');
+          leaderboardTable.innerHTML = '';
+    
+          data.forEach((entry, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${index + 1}</td><td>${entry.playerName}</td><td>${entry.time}s</td>`;
+            leaderboardTable.appendChild(row);
+          });
+        })
+        .catch(error => console.error('Error fetching leaderboard:', error));
     }
 
     

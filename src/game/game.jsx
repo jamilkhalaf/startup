@@ -9,12 +9,35 @@ const Game = ({userName}) => {
 
   const [score, setScore] = useState(0);
   const [time, setTime] = useState(0);
-  const playerName = userName; // You can replace this with dynamic input
+  const [playerName, setPlayerName] = useState(""); // You can replace this with dynamic input
 
   useEffect(() => {
-    // Initialize the game
-    initializeGame(playerName);
+    const fetchUserName = async () => {
+      try {
+        const response = await fetch('/api/user/me');
+        if (response.ok) {
+          const data = await response.json();
+          setPlayerName(data.email);
+        } else {
+          console.error('Failed to fetch user data');
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+
+    fetchUserName();
+  }, []);
+
+  useEffect(() => {
+    if (playerName) {
+      initializeGame(playerName);
+    }
+  }, [playerName]);
+
+  useEffect(() => {
     
+    // Initialize the game    
     const displayPlayerData = () => {
         console.log(`Player: ${playerName}, Score: ${score}, Time: ${time}`);
       };
@@ -41,7 +64,9 @@ const Game = ({userName}) => {
   
   return (
     <main className="game">
+        
       <h2>Memory Game</h2>
+      <h3 className="player-name">{playerName ? `Player: ${playerName}` : "Loading..."}</h3>
       <h3>Score: <span id="result">{score}</span></h3>
       <div id="timeElasped">Time: <span id="time">{time}</span></div>
       <button id="restartButton" onClick={restartGame}>Restart Game</button>

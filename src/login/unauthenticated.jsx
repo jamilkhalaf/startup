@@ -8,18 +8,33 @@ export function Unauthenticated(props) {
   const [password, setPassword] = React.useState('');
 
   async function loginUser() {
-    if (localStorage.getItem(userName)) {
-      localStorage.setItem('userName', userName);
-      props.onLogin(userName);
-    } else {
-      alert("User not found. Please create an account.");
-    }
+    loginOrCreate('/api/auth', 'login');
   }
 
+  // Create user function that interacts with the backend service
   async function createUser() {
-    localStorage.setItem(userName, JSON.stringify({ password }));
-    localStorage.setItem('userName', userName);
-    props.onLogin(userName);
+    loginOrCreate('/api/auth', 'create');
+  }
+
+  // General function for both login and create actions
+  async function loginOrCreate(endpoint, action) {
+    const response = await fetch(endpoint, {
+      method: action === 'login' ? 'PUT' : 'POST', // POST for create, PUT for login
+      body: JSON.stringify({ email: userName, password: password }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+
+    if (response.status === 200) {
+      // On success, store the user data in localStorage
+      localStorage.setItem('userName', userName);
+      const body = await response.json();
+      props.onLogin(userName);
+    } else {
+      const body = await response.json();
+      setDisplayError(`⚠ Error: ${body.msg}`);
+    }
   }
 
     return (
