@@ -17,7 +17,6 @@ const About = () => {
         <ul>
             <li>Real-time leaderboard updates to track your elapsed time.</li>
             <li>A responsive design for both desktop and mobile gameplay.</li>
-            <li>Random fun images from the Dog API after every game to celebrate your progress!</li>
         </ul>
         <p>
             Log in or sign up to start playing and see how high you can climb on the leaderboard. 
