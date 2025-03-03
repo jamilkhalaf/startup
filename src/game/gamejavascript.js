@@ -75,7 +75,6 @@ export function initializeGame(playerName) {
           clearInterval(timerInterval); // Stop time
           const victorySound = new Audio('/victory.mp3');
           victorySound.play();
-          alert("You won! See how you did on the leaderboard section.");
           endGame(playerName, Math.floor((Date.now() - startTime) / 1000));
         }
       } else {
@@ -140,9 +139,6 @@ export function initializeGame(playerName) {
         .catch(error => console.error('Error fetching leaderboard:', error));
     }
 
-    
-    
-  
     document.querySelector('#restartButton').addEventListener('click', restartGame);
   
     createBoard();
