@@ -119,7 +119,7 @@ function clearAuthCookie(res, user) {
   res.clearCookie('token');
 }
 
-const port = process.argv.length > 2 ? process.argv[2] : 4000;
+const port = process.argv.length > 2 ? process.argv[2] : 3000;
 app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });

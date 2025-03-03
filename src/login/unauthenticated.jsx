@@ -1,6 +1,8 @@
 import React from "react";
 
 import "./unauthenticated.css";
+import CustomAlert from '../alert/alert.jsx'; 
+
 
 
 export function Unauthenticated(props) {
@@ -36,9 +38,13 @@ export function Unauthenticated(props) {
     } else {
       const body = await response.json();
       setDisplayError(`⚠ Error: ${body.msg}`);
-      alert(`⚠ Error: ${body.msg}`);
     }
   }
+
+  const closeAlert = () => {
+    setDisplayError('');
+  };
+  
 
     return (
         <main className="login">
@@ -70,6 +76,7 @@ export function Unauthenticated(props) {
             <button type="button" onClick={() => loginUser()} disabled={!userName || !password}>Login</button>
             <button type="button" onClick={() => createUser()} disabled={!userName || !password}>Create</button>
           </form>
+          {displayError && <CustomAlert message={displayError} onClose={closeAlert} />}
         </main>
     );
   };
