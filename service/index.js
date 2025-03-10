@@ -30,7 +30,9 @@ apiRouter.post('/auth', async (req, res) => {
 
 apiRouter.put('/auth', async (req, res) => {
   const user = await getUser('email', req.body.email);
-  if (user && (await bcrypt.compare(req.body.password, user.password))) {
+  if (!user) {
+    res.status(404).send({ msg: 'No user exist' });
+  } else if (await bcrypt.compare(req.body.password, user.password)) {
     setAuthCookie(res, user);
 
     res.send({ email: user.email });

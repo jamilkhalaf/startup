@@ -2,7 +2,8 @@ import React from 'react';
 import './alert.css'; // Import the custom styles for the alert
 
 function CustomAlert({ message, onClose }) {
-  const displayMessage = message === '⚠ Error: Unauthorized' ? 'Wrong password' : message === '⚠ Error: Existing user' ? 'Choose another username' : message;
+  const displayMessage = message === '⚠ Error: Unauthorized' ? 'Wrong password' : message === '⚠ Error: Existing user' ? 'Choose another username, username already exist' : message === '⚠ Error: No user exist' ? 'Create account' : message;
+
   return (
     <div id="popup1" className="overlay">
       <div className="popup">
