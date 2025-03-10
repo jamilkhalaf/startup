@@ -140,3 +140,25 @@ To simulate parts of the application that would eventually rely on backend servi
 Ensuring reactivity was crucial, so I spent time managing component state and setting up event handling. I made sure that any changes in state were immediately reflected in the UI and that the application responded smoothly to user interactions.
 
 As I worked through these features, I committed my changes frequently and pushed updates to my GitHub repository. I also documented my progress and learnings in my notes to keep track of the new concepts and techniques I implemented. This helped me build a strong foundation for future improvements and collaborations on the project.
+
+## Service 
+
+
+For my website, I used Express.js as the core framework to handle the back-end functionality. Express provided a simple and efficient way to set up the server and manage different routes. I initialized the app with the necessary middleware, including the built-in JSON body parser, which allowed my application to parse incoming JSON requests easily. I also used the 'cookie-parser' middleware to manage cookies, specifically for tracking authentication tokens.
+
+Static content for the front-end was served from a 'public' directory using Express’s 'express.static' middleware. This made it easy to host and access HTML, CSS, and JavaScript files directly from the server. To manage my API endpoints, I created a separate router called 'apiRouter', which kept the route definitions organized and modular.
+
+For user authentication, I implemented three main endpoints: POST, PUT, and DELETE under '/api/auth'. The POST endpoint handled new user registration by first checking if an existing user already had the same email and then creating a new user if they didn’t exist. Passwords were hashed using 'bcryptjs' to ensure security, and once a user was created, an authentication cookie was set using a unique token generated with the 'uuid' library.
+
+The PUT endpoint managed user login by verifying the provided email and password against stored credentials. If the credentials matched, an authentication cookie was set; otherwise, appropriate error responses were sent. The DELETE endpoint cleared the authentication cookie when users logged out, removing their session information.
+
+A '/user/me' endpoint provided a simple way to retrieve user information based on their authentication token. It checked the token stored in the user's cookies and returned the associated user’s email if they were authorized.
+
+In addition to authentication, I implemented a leaderboard service to track the top 10 players with the fastest times. The POST endpoint for '/leaderboard' accepted player names and times, validating the input and adding the new score to an array. The array was sorted by time in ascending order, and only the top 10 scores were kept. A GET endpoint for '/leaderboard' allowed the front-end to retrieve and display the current leaderboard standings.
+
+To manage authentication cookies, I used two utility functions: 'setAuthCookie' and 'clearAuthCookie'. 'setAuthCookie' assigned a unique token to the user and set it as a secure, HTTP-only cookie. 'clearAuthCookie' removed the token from the user object and cleared the cookie from the response.
+
+Finally, I set the server to listen on a configurable port, defaulting to 4000 if no argument was provided. The Express server setup ensured efficient routing, secure authentication, and seamless front-end integration for my website.
+
+
+

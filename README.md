@@ -144,9 +144,9 @@ My notes are in my notes.md file
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **Node.js/Express HTTP service** - I did complete this part of the deliverable. created a backend service using Node.js and Express that handles requests for logging out by implementing the DELETE method on the /api/auth endpoint
+- [x] **Node.js/Express HTTP service** - I did complete this part of the deliverable. created a backend service using Node.js and Express that handles requests for logging out, logging in, and creating users by implementing the /api/auth endpoint
 - [x] **Static middleware for frontend** - I did complete this part of the deliverable. Express app serves static files, ensuring that my frontend (React app) is properly hosted and available when the server runs
-- [x] **Calls to third party endpoints** - I did complete this part of the deliverable. In the Authenticated component, you made a fetch request to the https://icanhazdadjoke.com/ API to retrieve a random joke and display it to the user.
+- [x] **Calls to third party endpoints** - I did complete this part of the deliverable. In the Authenticated component, I made a fetch request to the https://icanhazdadjoke.com/ API to retrieve a random joke and display it to the user.
 - [x] **Backend service endpoints** - I did complete this part of the deliverable. implemented an API endpoint on the backend that handles the user logout, login, and saving scores processes.
 - [x] **Frontend calls service endpoints** - I did complete this part of the deliverable. I created a fetch request to my backend's /api/auth endpoint and other endpoints to connect my frontend with the backend. 
 
