@@ -2,6 +2,7 @@ import React from 'react';
 import './alert.css'; // Import the custom styles for the alert
 
 function CustomAlert({ message, onClose }) {
+  const displayMessage = message === '⚠ Error: Unauthorized' ? 'Wrong password' : message === '⚠ Error: Existing user' ? 'Choose another username' : message;
   return (
     <div id="popup1" className="overlay">
       <div className="popup">
@@ -10,7 +11,7 @@ function CustomAlert({ message, onClose }) {
           &times;
         </a>
         <div className="content">
-          {message}
+          {displayMessage}
         </div>
       </div>
     </div>
