@@ -6,7 +6,7 @@ const DB = require('./database.js');
 const app = express();
 
 const authCookieName = 'token';
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
