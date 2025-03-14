@@ -5,8 +5,7 @@ import { initializeGame } from "./gamejavascript";
 
 
 
-
-const Game = ({userName}) => {
+const Game = () => {
 
   const [score, setScore] = useState(0);
   const [time, setTime] = useState(0);
@@ -31,6 +30,7 @@ const Game = ({userName}) => {
   }, []);
 
   useEffect(() => {
+    // Initialize the game only once when playerName is available
     if (playerName) {
       initializeGame(playerName);
     }

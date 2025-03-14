@@ -13,7 +13,7 @@ export function Authenticated(props) {
 
     async function logout() {
       // Send a request to the server to logout
-      const response = await fetch('/api/auth', {
+      const response = await fetch('/api/auth/logout', {
           method: 'DELETE', // The delete method for logging out
           credentials: 'include', // Make sure cookies are included
       });

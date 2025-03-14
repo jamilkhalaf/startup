@@ -90,19 +90,13 @@ export function initializeGame(playerName) {
       timerInterval = setInterval(() => {
         const timeElapsed = Math.floor((Date.now() - startTime) / 1000);
         timeDisplay.textContent = timeElapsed + 's';
-        sendWebSocketUpdate(playerName, resultDisplay.textContent, timeElapsed);
       }, 1000);
     }
   
 
-    function sendWebSocketUpdate(playerName, score, time) {
-      // Mock WebSocket message
-      const message = `${playerName}: Score = ${score}, Time = ${time}s`;
-      document.querySelector('#websocket-placeholder').textContent = message;
-    }
-
 
     function restartGame() {
+      console.log(playerName);
       startTime = null; 
       clearInterval(timerInterval);
       cardsWon = [];
@@ -114,33 +108,36 @@ export function initializeGame(playerName) {
     }
 
     function endGame(playerName, time) {
-      fetch('/api/leaderboard', {
+      fetch('/api/score', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ playerName, time }),
+        credentials: 'same-origin', // Ensure cookies are sent with the request
       })
-        .then(() => updateLeaderboard())
-        .catch(error => console.error('Error submitting score:', error));
-    }
+      .then(() => updateLeaderboard())
+      .catch(error => console.error('Error submitting score:', error));
+  }
     
-    function updateLeaderboard() {
-      fetch('/api/leaderboard')
-        .then(response => response.json())
-        .then(data => {
-          const leaderboardTable = document.querySelector('#leaderboard');
-          leaderboardTable.innerHTML = '';
-    
-          data.forEach((entry, index) => {
+  function updateLeaderboard() {
+    fetch('/api/leaderboard', {
+        method: 'GET',
+    })
+    .then(response => response.json())
+    .then(data => {
+        const leaderboardTable = document.querySelector('#leaderboard');
+        leaderboardTable.innerHTML = '';  // Clear existing leaderboard data
+
+        // Render each entry in the leaderboard
+        data.forEach((entry, index) => {
             const row = document.createElement('tr');
-            row.innerHTML = `<td>${index + 1}</td><td>${entry.playerName}</td><td>${entry.time}s</td>`;
+            row.innerHTML = `<td>${index + 1}</td><td>${entry.playerName}</td><td>${(entry.time / 1000).toFixed(2)}s</td>`;  // Display time in seconds
             leaderboardTable.appendChild(row);
-          });
-        })
-        .catch(error => console.error('Error fetching leaderboard:', error));
-    }
+        });
+    })
+    .catch(error => console.error('Error fetching leaderboard:', error));
+}
 
     document.querySelector('#restartButton').addEventListener('click', restartGame);
-  
     createBoard();
     
   }

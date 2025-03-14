@@ -35,7 +35,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           {authState === AuthState.Authenticated && (
             <>
-              <Route path="/game" element={<Game userName={currentUser}/>} />
+              <Route path="/game" element={<Game/>} />
               <Route path="/leaderboards" element={<Leaderboard />} />
             </>
           )}

@@ -10,16 +10,16 @@ export function Unauthenticated(props) {
   const [showPassword, setShowPassword] = React.useState(false);
 
   async function loginUser() {
-    loginOrCreate('/api/auth', 'login');
+    loginOrCreate('/api/auth/login', 'login');
   }
 
   async function createUser() {
-    loginOrCreate('/api/auth', 'create');
+    loginOrCreate('/api/auth/register', 'create');
   }
 
   async function loginOrCreate(endpoint, action) {
     const response = await fetch(endpoint, {
-      method: action === 'login' ? 'PUT' : 'POST',
+      method: 'POST',  // Always POST since both login and create are POST requests
       body: JSON.stringify({ email: userName, password: password }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',

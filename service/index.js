@@ -1,130 +1,162 @@
 const express = require('express');
-const app = express();
 const cookieParser = require('cookie-parser');
-const uuid = require('uuid');
 const bcrypt = require('bcryptjs');
+const uuid = require('uuid');
 const DB = require('./database.js');
+const app = express();
 
+const authCookieName = 'token';
+const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
-
-// JSON body parsing using built-in middleware
+// Middleware to parse JSON bodies
 app.use(express.json());
 
-// Use the cookie parser middleware for tracking authentication tokens
+// Middleware to parse cookies for tracking auth tokens
 app.use(cookieParser());
 
-// Serve up the front-end static content hosting
+// Serve static files from the public directory
 app.use(express.static('public'));
 
-// Router for service endpoints
-var apiRouter = express.Router();
-app.use(`/api`, apiRouter);
+// API router for service endpoints
+const apiRouter = express.Router();
+app.use('/api', apiRouter);
 
-apiRouter.post('/auth', async (req, res) => {
-  if (await getUser('email', req.body.email)) {
-    res.status(409).send({ msg: 'Existing user' });
-  } else {
-    const user = await createUser(req.body.email, req.body.password);
-    setAuthCookie(res, user);
-
-    res.send({ email: user.email });
+// Register a new user and generate auth token
+apiRouter.post('/auth/register', async (req, res) => {
+  const existingUser = await DB.getUser(req.body.email);
+  if (existingUser) {
+    return res.status(409).send({ msg: 'User already exists' });
   }
+
+  const user = await createUser(req.body.email, req.body.password);
+  setAuthCookie(res, user.token);
+
+  res.send({ email: user.email });
 });
 
-apiRouter.put('/auth', async (req, res) => {
-  const user = await getUser('email', req.body.email);
+// Login and authenticate a user
+apiRouter.post('/auth/login', async (req, res) => {
+  const user = await DB.getUser(req.body.email);
   if (!user) {
-    res.status(404).send({ msg: 'No user exist' });
-  } else if (await bcrypt.compare(req.body.password, user.password)) {
-    setAuthCookie(res, user);
+    return res.status(404).send({ msg: 'User not found' });
+  }
 
-    res.send({ email: user.email });
+  const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
+  if (isPasswordValid) {
+    user.token = uuid.v4();
+    await DB.updateUser(user);
+    setAuthCookie(res, user.token);
+    return res.send({ email: user.email });
+  }
+
+  res.status(401).send({ msg: 'Invalid credentials' });
+});
+
+// Logout and clear auth token
+apiRouter.delete('/auth/logout', async (req, res) => {
+  const token = req.cookies[authCookieName];
+  const user = await DB.getUserByToken(token);
+  if (user) {
+    user.token = null;
+    await DB.updateUser(user);
+  }
+
+  res.clearCookie(authCookieName);
+  res.status(204).end();
+});
+
+// Get the current authenticated user's data
+
+
+// Middleware to ensure the user is authenticated
+const verifyAuth = async (req, res, next) => {
+  const user = await DB.getUserByToken(req.cookies[authCookieName]);
+  if (user) {
+    next();
   } else {
     res.status(401).send({ msg: 'Unauthorized' });
   }
-});
+};
 
-apiRouter.delete('/auth', async (req, res) => {
-  const token = req.cookies['token'];
-  const user = await getUser('token', token);
-  if (user) {
-    clearAuthCookie(res, user);
-  }
-
-  res.send({});
-});
-
-apiRouter.get('/user/me', async (req, res) => {
-  const token = req.cookies['token'];
-  const user = await getUser('token', token);
+apiRouter.get('/user/me', verifyAuth, async (req, res) => {
+  const token = req.cookies[authCookieName];
+  const user = await DB.getUserByToken(token);
   if (user) {
     res.send({ email: user.email });
   } else {
-    res.status(401).send({ msg: 'Unauthorized' });
+    res.status(404).send({ msg: 'User not found' });
   }
 });
 
-const users = [];
+apiRouter.get('/leaderboard', verifyAuth, async (req, res) => {
+  try {
+      const scores = await DB.getHighScores();  // Fetch the top 10 scores
+      res.send(scores);  // Send the leaderboard as a response
+  } catch (error) {
+      console.error('Error fetching leaderboard:', error);
+      res.status(500).send({ msg: 'Error fetching leaderboard' });
+  }
+});
 
+// Submit a score and update leaderboard
+apiRouter.post('/score', verifyAuth, async (req, res) => {
+  const newScore = req.body;
+  console.log('Received score:', newScore);
+
+  // Ensure valid data (check for player name and time)
+  if (!newScore.playerName || typeof newScore.time !== 'number') {
+      return res.status(400).send({ msg: 'Invalid data' });
+  }
+
+  try {
+      // Add the new score to the database
+      await DB.addTime(newScore);
+
+      // Fetch the updated leaderboard and send it back as a response
+      const leaderboard = await DB.getHighScores();
+      res.send(leaderboard);
+  } catch (error) {
+      console.error('Error submitting score:', error);
+      res.status(500).send({ msg: 'Error submitting score' });
+  }
+});
+
+
+
+// Default error handler
+app.use((err, req, res, next) => {
+  res.status(500).send({ type: err.name, message: err.message });
+});
+
+// Default route to serve index.html
+app.use((_req, res) => {
+  res.sendFile('index.html', { root: 'public' });
+});
+
+// Create a new user in the database
 async function createUser(email, password) {
   const passwordHash = await bcrypt.hash(password, 10);
 
   const user = {
     email: email,
     password: passwordHash,
+    token: uuid.v4(),
   };
 
-  users.push(user);
-
+  await DB.addUser(user);
   return user;
 }
 
-async function getUser(field, value) {
-  return users.find((user) => user[field] === value);
-}
-
-// Leaderboard service to track top 10 players with least time (highest score)
-const leaderboard = [];
-
-// Add a new score to the leaderboard
-apiRouter.post('/leaderboard', (req, res) => {
-  const { playerName, time } = req.body;
-
-  if (!playerName || typeof time !== 'number') {
-    return res.status(400).send({ msg: 'Invalid data' });
-  }
-
-  leaderboard.push({ playerName, time });
-  leaderboard.sort((a, b) => a.time - b.time);
-
-  if (leaderboard.length > 10) {
-    leaderboard.pop(); // Keep only top 10
-  }
-
-  res.status(201).send({ msg: 'Score added', leaderboard });
-});
-
-// Get the top 10 leaderboard
-apiRouter.get('/leaderboard', (req, res) => {
-  res.send(leaderboard);
-});
-
-function setAuthCookie(res, user) {
-  user.token = uuid.v4();
-
-  res.cookie('token', user.token, {
-    secure: true,
+// Set auth cookie in the response
+function setAuthCookie(res, authToken) {
+  res.cookie(authCookieName, authToken, {
+    secure: true,   // Set true for production to enable secure cookie
     httpOnly: true,
     sameSite: 'strict',
   });
 }
 
-function clearAuthCookie(res, user) {
-  delete user.token;
-  res.clearCookie('token');
-}
-
-const port = process.argv.length > 2 ? process.argv[2] : 4000;
-app.listen(port, function () {
-  console.log(`Listening on port ${port}`);
+// Start the server
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
