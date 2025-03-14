@@ -67,10 +67,10 @@ const Game = () => {
 
   const handleSendMessage = (e) => {
     e.preventDefault();
-
+  
     if (message.trim() !== "") {
       setMessages((prevMessages) => {
-        const newMessages = [...prevMessages, message];
+        const newMessages = [...prevMessages, `${playerName ? playerName : "Unknown"}: ${message}`];
         if (newMessages.length > maxMessages) {
           newMessages.shift(); // Remove the oldest message if we exceed the limit
         }
