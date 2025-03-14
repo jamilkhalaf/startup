@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-
 import "./game.css";
 import { initializeGame } from "./gamejavascript";
 
-
-
 const Game = () => {
-
   const [score, setScore] = useState(0);
   const [time, setTime] = useState(0);
   const [playerName, setPlayerName] = useState(""); // You can replace this with dynamic input
+  const [message, setMessage] = useState(""); // For the new message input
+  const [messages, setMessages] = useState([]); // Array to hold messages
+
+  const maxMessages = 4; // Maximum number of messages in the chat box
 
   useEffect(() => {
     const fetchUserName = async () => {
@@ -37,16 +37,14 @@ const Game = () => {
   }, [playerName]);
 
   useEffect(() => {
-    
     // Initialize the game    
     const displayPlayerData = () => {
         console.log(`Player: ${playerName}, Score: ${score}, Time: ${time}`);
       };
   
-      // Display score and time whenever they are updated
-      displayPlayerData();
-  }, [score, time, playerName]); // Re-run the effect when score, time, or playerName change
-
+    // Display score and time whenever they are updated
+    displayPlayerData();
+  }, [score, time, playerName]);
 
   const restartGame = () => {
     // Reset React state
@@ -62,11 +60,29 @@ const Game = () => {
       window.gameRestart();
     }
   };
-  
+
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value); // Update message input value
+  };
+
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+
+    if (message.trim() !== "") {
+      setMessages((prevMessages) => {
+        const newMessages = [...prevMessages, message];
+        if (newMessages.length > maxMessages) {
+          newMessages.shift(); // Remove the oldest message if we exceed the limit
+        }
+        return newMessages;
+      });
+      setMessage(""); // Clear input field after sending the message
+    }
+  };
+
   return (
     <main className="game">
-        
-      <h2>Memory Game</h2>
+      <h2 id="memory">Memory Game</h2>
       <h3 className="player-name">{playerName ? `Player: ${playerName}` : "Loading..."}</h3>
       <h3>Score: <span id="result">{score}</span></h3>
       <div id="timeElasped">Time: <span id="time">{time}</span></div>
@@ -74,9 +90,26 @@ const Game = () => {
       <div className="grid-container">
         <div className="grid"></div>
       </div>
-      
-      <div className="placeholder-container">
-        <p id="websocket-placeholder" >(Placeholder for WebSocket connection for real-time updates)</p>
+
+      {/* Chat Box */}
+      <div className="chat-box">
+        <h4>Chat</h4>
+        <div className="messages">
+          {messages.map((msg, index) => (
+            <p key={index}>{msg}</p>
+          ))}
+        </div>
+
+        {/* Add form to handle message input */}
+        <form onSubmit={handleSendMessage}>
+          <input
+            type="text"
+            placeholder="Type a message"
+            value={message}
+            onChange={handleMessageChange}
+          />
+          <button type="submit">Send</button>
+        </form>
       </div>
     </main>
   );

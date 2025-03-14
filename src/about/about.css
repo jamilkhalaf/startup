@@ -3,7 +3,7 @@
     max-width: 1200px; /* Set a max width for content */
     width: 100%; /* Ensure it stretches fully */
     margin: auto; /* Center it horizontally */
-    padding: 20px;
+    padding: 10px;
     background-color: #f8f9fa;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
