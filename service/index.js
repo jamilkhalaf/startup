@@ -3,6 +3,9 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const uuid = require('uuid');
 const bcrypt = require('bcryptjs');
+const DB = require('./database.js');
+
+
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
