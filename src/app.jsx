@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation  } from "react-router-dom";
 import HeaderPre from "./header/headerPreLogin";
 import HeaderPost from "./header/headerPostLogin";
 import Footer from "./footer/footer";
@@ -13,6 +13,7 @@ const App = () => {
   const [userName, setUserName] = React.useState(localStorage.getItem("userName") || "");
   const [authState, setAuthState] = React.useState(userName ? AuthState.Authenticated : AuthState.Unauthenticated);
   const currentUser = "example websocket online player";
+
 
   return (
     <BrowserRouter>
@@ -40,10 +41,17 @@ const App = () => {
             </>
           )}
         </Routes>
-        <Footer />
+        <FooterWithLocation />
       </div>
     </BrowserRouter>
   );
+};
+
+const FooterWithLocation = () => {
+  const location = useLocation();
+  const hideFooter = location.pathname === "/game" || location.pathname === "/leaderboards";
+
+  return !hideFooter ? <Footer /> : null;
 };
 
 export default App;

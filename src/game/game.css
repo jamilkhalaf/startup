@@ -1,22 +1,9 @@
-.game {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #f5f5f5;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    position: relative; /* Ensure the layout is contained */
-}
-
 /* Memory Game Title */
 #memory {
     font-family: 'Arial', sans-serif;
     font-size: 3em;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
     text-shadow: 2px 2px 5px rgba(201, 36, 36, 0.6);
 }
 
@@ -31,7 +18,7 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     position: fixed; /* Change to fixed positioning */
     top: 80px; /* Adjust to top position */
-    left: 100px; /* Adjust to left position */
+    left: 90px; /* Adjust to left position */
     z-index: 10; /* Ensure it stays on top */
 }
 
@@ -70,7 +57,7 @@ h3 {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin: 20px auto;
-    width: 60%;
+    width: 80%; /* Adjusted for responsiveness */
 }
 
 /* Chat Box Styling */
@@ -134,10 +121,6 @@ h3 {
 .grid-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 40px;
 }
 
 .grid {
@@ -179,8 +162,8 @@ h3 {
     transition: background-color 0.3s ease;
     position: fixed; /* Change to fixed positioning */
     bottom: 100px; /* Adjust position */
-    left: 50%;
-    transform: translateX(-50%); /* Center the button horizontally */
+    left: 80px; /* Positioned on the left */
+    transform: translateX(0); /* No centering needed */
 }
 
 /* Make everything responsive */
@@ -193,10 +176,12 @@ h3 {
 
     #restartButton {
         bottom: 20px;
+        left: 20px; /* Keep restart button left-aligned */
     }
 
     .grid-container {
         padding: 10px;
+        width: 90%; /* Make grid container wider */
     }
 
     .grid {
@@ -218,6 +203,7 @@ h3 {
 
     #restartButton {
         bottom: 10px;
+        left: 20px; /* Keep restart button left-aligned */
     }
 
     .grid {
