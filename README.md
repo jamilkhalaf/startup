@@ -156,11 +156,11 @@ My notes are in my notes.md file
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **User registration** - I did complete this part of the deliverable.
-- [x] **User login and logout** - I did complete this part of the deliverable.
-- [x] **Stores data in MongoDB** - I did complete this part of the deliverable.
-- [x] **Stores credentials in MongoDB** - I did complete this part of the deliverable.
-- [x] **Restricts functionality based on authentication** - I did complete this part of the deliverable.
+- [x] **User registration** - I did complete this part of the deliverable. I implemented a registration endpoint that hashes the password using bcrypt and stores user details in MongoDB.
+- [x] **User login and logout** - I did complete this part of the deliverable.I created login and logout endpoints that authenticate users using bcrypt and manage session tokens stored in cookies.
+- [x] **Stores data in MongoDB** - I did complete this part of the deliverable. I connected to MongoDB using mongodb package and implemented functions to insert, update, and retrieve user data.
+- [x] **Stores credentials in MongoDB** - I did complete this part of the deliverable. I securely store user credentials in MongoDB by hashing passwords before saving them.
+- [x] **Restricts functionality based on authentication** - I did complete this part of the deliverable. I implemented authentication middleware that verifies user tokens before allowing access to protected routes.
 
 ## 🚀 WebSocket deliverable
 
