@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./game.css";
 import { initializeGame } from "./gamejavascript";
+import { GameEvent, GameNotifier } from './gameEvents';
+
 
 const Game = () => {
   const [score, setScore] = useState(0);
@@ -8,6 +10,8 @@ const Game = () => {
   const [playerName, setPlayerName] = useState(""); // You can replace this with dynamic input
   const [message, setMessage] = useState(""); // For the new message input
   const [messages, setMessages] = useState([]); // Array to hold messages
+  const [eventMessage, setEventMessage] = useState(""); // New state for event message
+  const [chatMessage, setChatMessage] = useState("");
 
   const maxMessages = 4; // Maximum number of messages in the chat box
 
@@ -32,29 +36,60 @@ const Game = () => {
   useEffect(() => {
     // Initialize the game only once when playerName is available
     if (playerName) {
+        GameNotifier.broadcastEvent(playerName, GameEvent.Start, {});
       initializeGame(playerName);
     }
   }, [playerName]);
+
+    // Listen for events and update eventMessage state
+    useEffect(() => {
+        const handler = (event) => {
+            if (event.type === GameEvent.Start) {
+              setEventMessage(`Player ${event.from} has joined!`);
+            }
+            if (event.type === GameEvent.End) {
+              setEventMessage(`Player ${event.from} has finished in ${event.value}!`);
+            }
+            if (event.type === GameEvent.Chat) {
+                // Add incoming chat message to the messages state
+                setMessages((prevMessages) => {
+                  const newMessages = [
+                    ...prevMessages,
+                    `${event.from}: ${event.value}`,
+                  ];
+                  if (newMessages.length > maxMessages) {
+                    newMessages.shift(); // Keep the max number of messages
+                  }
+                  return newMessages;
+                });
+              }
+
+          };
+        
+          GameNotifier.addHandler(handler);
+    
+        return () => {
+          // Cleanup handler when the component unmounts
+          GameNotifier.removeHandler(handler);
+        };
+      }, []);
 
   useEffect(() => {
     // Initialize the game    
     const displayPlayerData = () => {
         console.log(`Player: ${playerName}, Score: ${score}, Time: ${time}`);
       };
-  
     // Display score and time whenever they are updated
     displayPlayerData();
   }, [score, time, playerName]);
 
   const restartGame = () => {
+    
+
     // Reset React state
     setScore(0);
     setTime(0);
     // Reset the WebSocket placeholder text
-    const wsPlaceholder = document.querySelector('#websocket-placeholder');
-    if (wsPlaceholder) {
-      wsPlaceholder.innerHTML = "<p>(Placeholder for WebSocket connection for real-time updates)</p>";
-    }
     // Call the game logic's restartGame function if available
     if (window.gameRestart) {
       window.gameRestart();
@@ -62,7 +97,12 @@ const Game = () => {
   };
 
   const handleMessageChange = (e) => {
-    setMessage(e.target.value); // Update message input value
+    setMessage(e.target.value);
+  };
+
+  const sendChatMessage = (msg) => {
+    // Broadcast the chat message
+    GameNotifier.broadcastEvent(playerName, GameEvent.Chat, msg);
   };
 
   const handleSendMessage = (e) => {
@@ -72,11 +112,14 @@ const Game = () => {
       setMessages((prevMessages) => {
         const newMessages = [...prevMessages, `${playerName ? playerName : "Unknown"}: ${message}`];
         if (newMessages.length > maxMessages) {
-          newMessages.shift(); // Remove the oldest message if we exceed the limit
+          newMessages.shift();
         }
         return newMessages;
       });
       setMessage(""); // Clear input field after sending the message
+      
+      // Send the message via broadcastEvent
+      sendChatMessage(message);
     }
   };
 
@@ -90,7 +133,8 @@ const Game = () => {
       <div className="grid-container">
         <div className="grid"></div>
       </div>
-
+    
+      {eventMessage && <h2>{eventMessage}</h2>}
       {/* Chat Box */}
       <div className="chat-box">
         <h4>Chat</h4>
