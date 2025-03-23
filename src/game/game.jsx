@@ -11,7 +11,6 @@ const Game = () => {
   const [message, setMessage] = useState(""); // For the new message input
   const [messages, setMessages] = useState([]); // Array to hold messages
   const [eventMessage, setEventMessage] = useState(""); // New state for event message
-  const [chatMessage, setChatMessage] = useState("");
 
   const maxMessages = 4; // Maximum number of messages in the chat box
 
@@ -45,10 +44,10 @@ const Game = () => {
     useEffect(() => {
         const handler = (event) => {
             if (event.type === GameEvent.Start) {
-              setEventMessage(`Player ${event.from} has joined!`);
+              setEventMessage(`${event.from} has joined!`);
             }
             if (event.type === GameEvent.End) {
-              setEventMessage(`Player ${event.from} has finished in ${event.value}!`);
+              setEventMessage(`${event.from} has finished in ${event.value}!`);
             }
             if (event.type === GameEvent.Chat) {
                 // Add incoming chat message to the messages state
@@ -134,7 +133,7 @@ const Game = () => {
         <div className="grid"></div>
       </div>
     
-      {eventMessage && <h2>{eventMessage}</h2>}
+      {eventMessage && <h2 id='eventMessage'>{eventMessage}</h2>}
       {/* Chat Box */}
       <div className="chat-box">
         <h4>Chat</h4>

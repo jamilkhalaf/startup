@@ -166,6 +166,23 @@ h3 {
     transform: translateX(0); /* No centering needed */
 }
 
+#eventMessage {
+    background-color: #fffbcc; /* Light yellow background */
+    color: #333; /* Dark text for readability */
+    padding: 10px 20px; /* Add padding for better spacing */
+    border-radius: 8px; /* Slightly rounded corners */
+    font-size: 18px; /* Slightly larger font */
+    font-weight: bold; /* Make the text bold */
+    margin-top: 20px; /* Add space above the message */
+    text-align: center; /* Center-align the message */
+    animation: fadeIn 2s ease-out; /* Add fade-in animation */
+  }
+  
+  /* Animation for fade-in effect */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 /* Make everything responsive */
 @media (max-width: 768px) {
     .chat-box {
