@@ -43,22 +43,34 @@ async function updateUser(user) {
 
 // Function to add a time record (score)
 async function addTime(timeData) {
-    // Ensure timeData includes the current timestamp
-    const timestamp = new Date(); // Timestamp for when the time record is added
-    timeData.timestamp = timestamp;
+    const { playerName, time } = timeData;
+    
+    // Check if the user already exists in the leaderboard
+    const existingEntry = await timeCollection.findOne({ playerName });
 
-    // Insert the new time entry into the collection
-    await timeCollection.insertOne(timeData);
+    if (existingEntry) {
+        // If the new time is better (lower), update the existing record
+        if (time < existingEntry.time) {
+            await timeCollection.updateOne(
+                { playerName },
+                { $set: { time, timestamp: new Date() } }
+            );
+        }
+    } else {
+        // Insert new player entry if they are not in the leaderboard
+        await timeCollection.insertOne({ playerName, time, timestamp: new Date() });
+    }
 
     // Fetch the top 10 leaderboard, sorted by time (ascending)
     const topTimes = await getHighScores();
 
-    // If there are more than 10 entries, remove the one with the highest time (last entry in sorted array)
+    // If more than 10 unique users exist, remove the worst (highest) time entry
     if (topTimes.length > 10) {
-        const highestTime = topTimes[topTimes.length - 1];
-        await timeCollection.deleteOne({ _id: highestTime._id });
+        const worstTime = topTimes[topTimes.length - 1]; // Last entry in sorted array
+        await timeCollection.deleteOne({ _id: worstTime._id });
     }
 }
+
 
 
 // Get the top 10 leaderboard
