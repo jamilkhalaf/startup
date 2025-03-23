@@ -162,7 +162,7 @@ h3 {
     transition: background-color 0.3s ease;
     position: fixed; /* Change to fixed positioning */
     bottom: 100px; /* Adjust position */
-    left: 80px; /* Positioned on the left */
+    left: 45%; /* Positioned on the left */
     transform: translateX(0); /* No centering needed */
 }
 

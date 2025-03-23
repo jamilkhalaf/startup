@@ -128,12 +128,12 @@ const Game = () => {
       <h3 className="player-name">{playerName ? `Player: ${playerName}` : "Loading..."}</h3>
       <h3>Score: <span id="result">{score}</span></h3>
       <div id="timeElasped">Time: <span id="time">{time}</span></div>
+      {eventMessage && <div id='eventMessage'>{eventMessage}</div>}
       <button id="restartButton" onClick={restartGame}>Restart Game</button>
       <div className="grid-container">
         <div className="grid"></div>
       </div>
     
-      {eventMessage && <h2 id='eventMessage'>{eventMessage}</h2>}
       {/* Chat Box */}
       <div className="chat-box">
         <h4>Chat</h4>
