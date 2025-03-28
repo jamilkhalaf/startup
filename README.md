@@ -166,8 +166,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Backend listens for WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Frontend makes WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Data sent over WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **WebSocket data displayed** - I did not complete this part of the deliverable.
-- [ ] **Application is fully functional** - I did not complete this part of the deliverable.
+- [x] **Backend listens for WebSocket connection** - I did complete this part of the deliverable by setting up a WebSocket server using Node.js and the ws library, ensuring the backend listens for incoming WebSocket connections.
+- [x] **Frontend makes WebSocket connection** - I did complete this part of the deliverable by using JavaScript's WebSocket API to establish a connection to the backend server from the frontend.
+- [x] **Data sent over WebSocket connection** - I did complete this part of the deliverable by serializing data into JSON format and sending it over the established WebSocket connection from the backend to the frontend.
+- [x] **WebSocket data displayed** - I did complete this part of the deliverable by listening for incoming WebSocket messages on the frontend and updating the DOM to display the received data dynamically.
+- [x] **Application is fully functional** - I did complete this part of the deliverable by testing the entire system to ensure data is sent, received, and displayed correctly, with no issues in the WebSocket connection or functionality.
