@@ -67,8 +67,6 @@ apiRouter.delete('/auth/logout', async (req, res) => {
   res.status(204).end();
 });
 
-// Get the current authenticated user's data
-
 
 // Middleware to ensure the user is authenticated
 const verifyAuth = async (req, res, next) => {
