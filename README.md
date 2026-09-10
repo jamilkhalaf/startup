@@ -20,14 +20,13 @@ Studying online can feel isolated and unorganized. StudySync gives students one 
 
 ![Design image](design.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The Login Page allows users to enter a username and password to access the application, with an optional sign-up option for new users. After authentication, users are redirected to the Dashboard Page, which acts as the central hub of the application and displays tasks, study statistics, and quick actions.
 
-```mermaid
-sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
-```
+The Task Management Page allows users to create new tasks, view pending and completed tasks, and mark tasks as complete, edit them, or delete them. Changes to tasks are stored in the database so users can access their information across different sessions.
+
+The Study Room Page allows users to create or join study rooms with other students. Inside a study room, users can start or stop study sessions and see live activity from other participants. WebSockets are used to provide real-time communication, allowing events such as users joining a room, starting a study session, or completing tasks to appear immediately.
+
+The Leaderboard Page displays users and their study points, allowing students to compare their productivity with others. The leaderboard can update in real time as users earn points. The Profile Page displays personal study statistics and completed tasks and provides options for managing the user's profile or logging out.
 
 ### Key features
 
