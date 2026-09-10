@@ -14,7 +14,7 @@ The application combines productivity tools with social features to make studyin
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Studying online can feel isolated and unorganized. StudySync gives students one place to organize their work and study alongside friends in real time. Users can create study rooms, track tasks and study sessions, see when friends are active, and compete on a live productivity leaderboard. StudySync turns studying into a more social, organized, and motivating experience.
 
 ### Design
 
