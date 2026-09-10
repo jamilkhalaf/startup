@@ -48,12 +48,17 @@ The Leaderboard Page displays users and their study points, allowing students to
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** -  I will use HTML to structure the website, including creating a login page for user authentication, a game page to display the memory interface, and a leaderboard page to show user rankings.
-- **CSS** - CSS will be used to style the website, ensuring a clean and responsive look. I will apply a retro memory aesthetic using themed colors and designs, make the layout responsive for both desktop and mobile users, and incorporate animations for transitions, button interactions, and gameplay elements.
-- **React** - React will serve as the framework for building a single-page application. I will use a component-based architecture to divide the application into reusable parts, such as the Login, Game, and Leaderboard components. React will also handle routing between pages and provide reactive updates to the leaderboard and game state.
-- **Service** - The backend services will handle essential functions, including user authentication (login and logout), saving and retrieving scores for the leaderboard, and interacting with an external API, such as the Dog API, to fetch random images for fun after a game ends.
-- **DB/Login** - A database will store user information and scores. I will securely store hashed passwords in the database, display the logged-in user’s name on the game and leaderboard pages, and organize the data into tables for users (e.g., username and password hash) and scores (e.g., user ID, score, and timestamp).
-- **WebSocket** -  I will use WebSockets to enable real-time communication. This will include broadcasting leaderboard updates whenever a new score is submitted. Optionally, I will also broadcast live player activity, such as notifying others when a user starts playing the memory game.
+- HTML - I will use HTML to structure the website, including the login and sign-up pages, dashboard, task management page, study rooms, leaderboard, and user profile.
+
+- CSS - CSS will be used to create a clean and responsive design that works on both desktop and mobile devices. I will style the dashboard, task cards, study rooms, forms, navigation elements, and leaderboard.
+
+- React - React will be used to build the application as a single-page application. I will create reusable components for the Login, Dashboard, Tasks, Study Rooms, Leaderboard, and Profile pages. React will also handle routing, user interactions, and dynamic updates to the interface.
+
+- Service - The backend will use Node.js and Express to provide API endpoints for user authentication, creating and managing tasks, recording study sessions, managing study rooms, and retrieving leaderboard information. I will also connect to a third-party API to display motivational quotes or other study-related content.
+
+- DB/Login - MongoDB will store user accounts, tasks, study sessions, rooms, and productivity points. Passwords will be securely hashed before being stored, and authentication will be used to restrict certain features to logged-in users.
+
+- WebSocket - I will use WebSockets for real-time communication between users. WebSockets will broadcast activity such as when a student joins a study room, starts or stops studying, or completes a task. They will also allow the leaderboard and study-room activity to update instantly without requiring users to refresh the page.
 
 ## 🚀 Specification Deliverable
 
