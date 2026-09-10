@@ -2,7 +2,9 @@
 
 [My Notes](notes.md)
 
-This application is a modern web-based platform designed to combine nostalgia with technology. It features a user-friendly login system, an engaging memory game, and a competitive leaderboard that updates in real time. The platform ensures a seamless experience for players while showcasing key web development concepts, including responsive design, authentication, database integration, and real-time communication. By blending classic gameplay with contemporary web technologies, the application aims to provide entertainment while demonstrating technical excellence in web development.
+StudySync is a real-time study and productivity platform designed to help students stay focused, organize their work, and study together online. Users can create accounts, join study rooms, create tasks, track study sessions, and see the activity of other students in real time.
+
+The application combines productivity tools with social features to make studying more interactive. Students can see who is currently studying, complete tasks, accumulate study points, and compete on a leaderboard.
 
 > [!NOTE]
 > This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
@@ -29,20 +31,30 @@ sequenceDiagram
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- User Accounts: Users can register, log in, log out, and maintain their own study profile.
+
+- Study Dashboard: Each user has a dashboard showing upcoming tasks, completed tasks, study time, and productivity points.
+
+- Study Rooms: Users can create or join study rooms where multiple students can study together.
+
+- Task Management: Students can create assignments or study tasks, set deadlines, and mark them as completed.
+
+- Live Activity: Users can see real-time events such as when another student joins a room, starts studying, or completes a task.
+
+- Leaderboard: Students earn points by completing tasks and study sessions. Rankings automatically update when scores change.
+
+- External API: The application will retrieve motivational quotes or other useful study-related content from a third-party API.
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** -  I will use HTML to structure the website, including creating a login page for user authentication, a game page to display the memory interface, and a leaderboard page to show user rankings.
+- **CSS** - CSS will be used to style the website, ensuring a clean and responsive look. I will apply a retro memory aesthetic using themed colors and designs, make the layout responsive for both desktop and mobile users, and incorporate animations for transitions, button interactions, and gameplay elements.
+- **React** - React will serve as the framework for building a single-page application. I will use a component-based architecture to divide the application into reusable parts, such as the Login, Game, and Leaderboard components. React will also handle routing between pages and provide reactive updates to the leaderboard and game state.
+- **Service** - The backend services will handle essential functions, including user authentication (login and logout), saving and retrieving scores for the leaderboard, and interacting with an external API, such as the Dog API, to fetch random images for fun after a game ends.
+- **DB/Login** - A database will store user information and scores. I will securely store hashed passwords in the database, display the logged-in user’s name on the game and leaderboard pages, and organize the data into tables for users (e.g., username and password hash) and scores (e.g., user ID, score, and timestamp).
+- **WebSocket** -  I will use WebSockets to enable real-time communication. This will include broadcasting leaderboard updates whenever a new score is submitted. Optionally, I will also broadcast live player activity, such as notifying others when a user starts playing the memory game.
 
 ## 🚀 Specification Deliverable
 
