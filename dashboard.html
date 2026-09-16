@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudySync - Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <h1>StudySync</h1>
+      <nav>
+        <menu>
+          <li><a href="index.html">Login</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="tasks.html">Tasks</a></li>
+          <li><a href="rooms.html">Study Rooms</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </menu>
+      </nav>
+      <hr />
+    </header>
+
+    <main>
+      <!-- Logged in user name will be filled in after authentication -->
+      <h2>Welcome back, <span id="userName">jamil</span></h2>
+
+      <section>
+        <h3>Your Stats</h3>
+        <ul>
+          <li>Study time this week: <span>4h 30m</span></li>
+          <li>Tasks completed: <span>7</span></li>
+          <li>Study points: <span>320</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Upcoming Tasks</h3>
+        <ul>
+          <li>CS 260 HTML deliverable - due Sep 20</li>
+          <li>Math 112 homework 4 - due Sep 18</li>
+          <li>Read chapter 3 for Writing 150 - due Sep 19</li>
+        </ul>
+        <a href="tasks.html">View all tasks</a>
+      </section>
+
+      <section>
+        <h3>Quick Actions</h3>
+        <button type="button">Start Study Session</button>
+        <a href="rooms.html"><button type="button">Join a Study Room</button></a>
+        <a href="tasks.html"><button type="button">Add a Task</button></a>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <span>Jamil Khalaf</span>
+      <br />
+      <a href="https://github.com/jamilkhalaf/startup">GitHub</a>
+    </footer>
+  </body>
+</html>
