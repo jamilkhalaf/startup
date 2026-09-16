@@ -25,6 +25,25 @@
       <h2>My Tasks</h2>
 
       <section>
+        <h3>Add a Task</h3>
+        <form method="get" action="tasks.html">
+          <div>
+            <label for="taskName">Task</label>
+            <input type="text" id="taskName" name="taskName" placeholder="What do you need to do?" />
+          </div>
+          <div>
+            <label for="course">Course</label>
+            <input type="text" id="course" name="course" placeholder="CS 260" />
+          </div>
+          <div>
+            <label for="dueDate">Due date</label>
+            <input type="date" id="dueDate" name="dueDate" />
+          </div>
+          <button type="submit">Add Task</button>
+        </form>
+      </section>
+
+      <section>
         <h3>Pending</h3>
         <!-- Database placeholder: tasks will be loaded from MongoDB -->
         <table>
