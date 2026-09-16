@@ -1,4 +1,4 @@
-# Your startup name here
+# ByuSync
 
 [My Notes](notes.md)
 
