@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudySync - Tasks</title>
+  </head>
+  <body>
+    <header>
+      <h1>StudySync</h1>
+      <nav>
+        <menu>
+          <li><a href="index.html">Login</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="tasks.html">Tasks</a></li>
+          <li><a href="rooms.html">Study Rooms</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </menu>
+      </nav>
+      <hr />
+    </header>
+
+    <main>
+      <h2>My Tasks</h2>
+
+      <section>
+        <h3>Pending</h3>
+        <!-- Database placeholder: tasks will be loaded from MongoDB -->
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Course</th>
+              <th>Due</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML deliverable</td>
+              <td>CS 260</td>
+              <td>Sep 20</td>
+              <td>
+                <button type="button">Complete</button>
+                <button type="button">Edit</button>
+                <button type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Homework 4</td>
+              <td>Math 112</td>
+              <td>Sep 18</td>
+              <td>
+                <button type="button">Complete</button>
+                <button type="button">Edit</button>
+                <button type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Read chapter 3</td>
+              <td>Writing 150</td>
+              <td>Sep 19</td>
+              <td>
+                <button type="button">Complete</button>
+                <button type="button">Edit</button>
+                <button type="button">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Completed</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Course</th>
+              <th>Completed</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Specification deliverable</td>
+              <td>CS 260</td>
+              <td>Sep 8</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td>AWS deliverable</td>
+              <td>CS 260</td>
+              <td>Sep 12</td>
+              <td>50</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <span>Jamil Khalaf</span>
+      <br />
+      <a href="https://github.com/jamilkhalaf/startup">GitHub</a>
+    </footer>
+  </body>
+</html>
