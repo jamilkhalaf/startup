@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudySync - Study Rooms</title>
+  </head>
+  <body>
+    <header>
+      <h1>StudySync</h1>
+      <nav>
+        <menu>
+          <li><a href="index.html">Login</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="tasks.html">Tasks</a></li>
+          <li><a href="rooms.html">Study Rooms</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </menu>
+      </nav>
+      <hr />
+    </header>
+
+    <main>
+      <h2>Study Rooms</h2>
+
+      <section>
+        <h3>Create a Room</h3>
+        <form method="get" action="rooms.html">
+          <div>
+            <label for="roomName">Room name</label>
+            <input type="text" id="roomName" name="roomName" placeholder="CS 260 grind session" />
+          </div>
+          <button type="submit">Create Room</button>
+        </form>
+      </section>
+
+      <section>
+        <h3>Open Rooms</h3>
+        <p><small><em>Placeholder: rooms and member counts will be loaded from the database.</em></small></p>
+        <table>
+          <thead>
+            <tr>
+              <th>Room</th>
+              <th>Studying now</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CS 260 grind session</td>
+              <td>3</td>
+              <td><button type="button">Join</button></td>
+            </tr>
+            <tr>
+              <td>Math 112 exam prep</td>
+              <td>5</td>
+              <td><button type="button">Join</button></td>
+            </tr>
+            <tr>
+              <td>Library quiet room</td>
+              <td>1</td>
+              <td><button type="button">Join</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <span>Jamil Khalaf</span>
+      <br />
+      <a href="https://github.com/jamilkhalaf/startup">GitHub</a>
+    </footer>
+  </body>
+</html>
