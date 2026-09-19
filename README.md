@@ -86,16 +86,16 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits)
-- [ ] **HTML pages** - I did not complete this part of the deliverable.
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
-- [ ] **Links** - I did not complete this part of the deliverable.
-- [ ] **Text** - I did not complete this part of the deliverable.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- [x] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits) - Simon HTML is deployed to [simon.byusync.click](https://simon.byusync.click), a link to this GitHub repository is in the footer of every page, and I committed my work across several days as I built each page.
+- [x] **HTML pages** - I created a page for every component of the application: `index.html` (login), `dashboard.html`, `tasks.html`, `rooms.html`, `leaderboard.html`, and `profile.html`. The default page is named `index.html` so it loads automatically.
+- [x] **Proper HTML element usage** - Every page uses `body`, `header`, `nav`, `main`, and `footer` for structure. I also used `form`, `label`, `input`, `button`, `table` with `thead`/`tbody`/`th`/`td`, `section`, `ul`/`li`, `blockquote`, and `img`.
+- [x] **Links** - The `nav` menu in the header links to all six pages and appears on every page. There are also contextual links such as "View all tasks" on the dashboard and profile, the quick action buttons on the dashboard, and a link to this GitHub repository in the footer of every page.
+- [x] **Text** - Each page has real textual content describing what it does: the elevator pitch on the login page, stats and upcoming tasks on the dashboard, task lists with course names and due dates, study room descriptions, leaderboard rankings, and profile statistics.
+- [x] **3rd party API placeholder** - The "Daily Motivation" section of `dashboard.html` shows a quote in a `blockquote` with a note that it will be fetched from a third party quotes API.
+- [x] **Images** - `index.html` displays a study photo (`studysync.jpg`) and `profile.html` displays a profile picture (`avatar.jpg`).
+- [x] **Login placeholder** - `index.html` has a form with username and password inputs plus Login and Create Account buttons. After logging in, the user name is displayed on the dashboard ("Welcome back, jamil") and at the top of the profile page, which also has a Logout button.
+- [x] **DB data placeholder** - Data that will come from MongoDB is shown in tables: the pending and completed task tables on `tasks.html`, the open rooms table on `rooms.html`, the rankings table on `leaderboard.html`, and the statistics table on `profile.html`. Each one has a visible note marking it as database data.
+- [x] **WebSocket placeholder** - The "Live Activity" feed in `rooms.html` shows realtime events like students joining a room, starting a session, or completing a task. The "Recent Point Changes" list in `leaderboard.html` shows point updates as they happen. Both are marked with a visible note explaining they will update over a WebSocket connection.
 
 ## 🚀 CSS deliverable
 
