@@ -42,6 +42,16 @@ Simon HTML has four pages (home/login, play, scores, about) with no CSS or JS â€
 - Login is a `<form>` with inputs, scores are a `<table>`, the game board is an inline `<svg>`, and `<hr>` gives separation since there is no CSS.
 - Simon leaves a placeholder for every technology in the class (auth, database, WebSocket, 3rd-party API). My startup HTML needs to do the same with mock data.
 
+### My startup HTML
+
+Built six pages (index, dashboard, tasks, rooms, leaderboard, profile) with the same header/nav/footer copied into each one.
+
+- Every page needs its own copy of the nav right now, so any nav change means editing six files. This is exactly what React components will fix.
+- Used `<table>` anywhere the data will eventually come from the database, and `<ul>` for feeds that WebSockets will update.
+- Added visible "Placeholder:" notes on the page next to each placeholder so it's obvious where each technology will plug in.
+- A browser caches images and pages hard. After deploying, use Cmd+Shift+R or `curl` the URL to see what the server is really sending.
+- Editing files directly on the server gets wiped the next time `deployFiles.sh` runs, since it deletes the folder before copying. Make changes locally.
+
 ## React
 
 Interesting things I have learned about React
