@@ -214,13 +214,13 @@ main {
   padding-top: var(--space-lg);
 }
 
-footer {
+body > footer {
   border-top: 1px solid var(--color-border);
   color: var(--color-muted);
   font-size: 0.85rem;
 }
 
-footer .container {
+body > footer .container {
   display: flex;
   justify-content: space-between;
   padding-bottom: var(--space-md);
@@ -239,7 +239,7 @@ footer .container {
     gap: 0.9rem;
   }
 
-  footer .container {
+  body > footer .container {
     flex-direction: column;
     gap: 0.25rem;
   }
