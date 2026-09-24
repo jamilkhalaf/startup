@@ -1,0 +1,71 @@
+/* StudySync base styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --color-bg: #fbfbfa;
+  --color-surface: #ffffff;
+  --color-text: #1b1b1b;
+  --color-muted: #6d6d6d;
+  --color-border: #e3e1dd;
+  --color-accent: #2f5d7c;
+  --color-accent-dark: #22465e;
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 1.35rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+
+h4 {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+small {
+  color: var(--color-muted);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 0;
+}
