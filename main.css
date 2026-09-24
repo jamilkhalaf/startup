@@ -182,3 +182,20 @@ header menu a {
   color: var(--color-muted);
   font-size: 0.9rem;
 }
+
+#brand {
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+header menu a:hover,
+header menu a:focus {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+header menu a.active {
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-text);
+  padding-bottom: 2px;
+}
