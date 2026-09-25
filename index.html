@@ -31,23 +31,32 @@
     </header>
 
     <main class="container">
-      <h2>Welcome to StudySync</h2>
-      <img src="studysync.jpg" alt="Student studying at a desk" width="400" />
-      <p>Organize your work and study alongside friends in real time.</p>
+      <section class="login">
+        <div class="login-intro">
+          <h2>Welcome to StudySync</h2>
+          <p>Organize your work and study alongside friends in real time.</p>
+          <img src="studysync.jpg" alt="Student studying at a desk" />
+        </div>
 
-      <!-- Login placeholder: will be wired to the authentication service later -->
-      <form method="get" action="dashboard.html">
-        <div>
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" placeholder="your username" />
+        <!-- Login placeholder: will be wired to the authentication service later -->
+        <div class="panel">
+          <h3>Sign in</h3>
+          <form method="get" action="dashboard.html">
+            <div class="field">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" placeholder="your username" />
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="password" />
+            </div>
+            <div class="form-actions">
+              <button class="btn-primary" type="submit">Login</button>
+              <button type="submit">Create Account</button>
+            </div>
+          </form>
         </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" placeholder="password" />
-        </div>
-        <button type="submit">Login</button>
-        <button type="submit">Create Account</button>
-      </form>
+      </section>
     </main>
 
     <footer>

@@ -244,3 +244,18 @@ body > footer .container {
     gap: 0.25rem;
   }
 }
+
+/* Login page */
+
+.login {
+  align-items: start;
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr 330px;
+}
+
+@media (max-width: 800px) {
+  .login {
+    grid-template-columns: 1fr;
+  }
+}
