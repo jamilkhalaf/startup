@@ -38,7 +38,7 @@ h1 {
 
 h2 {
   font-size: 1.6rem;
-  margin-bottom: var(--space-md);
+  margin-bottom: 1.5rem;
 }
 
 h3 {
@@ -312,7 +312,7 @@ body > footer .container {
 /* Sections */
 
 section {
-  margin-bottom: var(--space-lg);
+  margin-bottom: 2.25rem;
 }
 
 section h3 {
