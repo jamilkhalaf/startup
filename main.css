@@ -382,3 +382,19 @@ section h3 {
   flex-wrap: wrap;
   gap: var(--space-sm);
 }
+
+.note {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: var(--space-sm);
+}
+
+#userName {
+  color: var(--color-accent);
+}
+
+blockquote p {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
