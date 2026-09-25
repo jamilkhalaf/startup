@@ -308,3 +308,20 @@ body > footer .container {
   max-width: 520px;
   width: 100%;
 }
+
+/* Sections */
+
+section {
+  margin-bottom: var(--space-lg);
+}
+
+section h3 {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.4rem;
+}
+
+.panel h3 {
+  border-bottom: none;
+  margin-bottom: var(--space-md);
+  padding-bottom: 0;
+}
