@@ -293,3 +293,18 @@ body > footer .container {
   border-color: var(--color-accent-dark);
   color: var(--color-surface);
 }
+
+.login-intro p {
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  max-width: 44ch;
+}
+
+.login-intro img {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  display: block;
+  margin-top: var(--space-md);
+  max-width: 520px;
+  width: 100%;
+}
