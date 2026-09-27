@@ -33,53 +33,57 @@
     <main class="container">
       <h2>My Profile</h2>
 
-      <section>
+      <section class="profile-header">
         <!-- Login placeholder: the logged in user name comes from authentication -->
         <img src="avatar.jpg" alt="Profile picture" width="150" height="150" />
-        <h3><span id="userName">jamil</span></h3>
-        <p>Member since September 2026</p>
-        <button type="button">Logout</button>
+        <div class="profile-details">
+          <h3><span id="userName">jamil</span></h3>
+          <p>Member since September 2026</p>
+          <button type="button">Logout</button>
+        </div>
       </section>
 
       <section>
         <h3>Study Statistics</h3>
         <p class="note">Placeholder: these statistics will be loaded from the database.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Statistic</th>
-              <th>Value</th>
-            </tr>
-          </thead>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Statistic</th>
+                <th class="num">Value</th>
+              </tr>
+            </thead>
           <tbody>
-            <tr>
-              <td>Total study time</td>
-              <td>26h 10m</td>
-            </tr>
-            <tr>
-              <td>Study sessions</td>
-              <td>31</td>
-            </tr>
-            <tr>
-              <td>Tasks completed</td>
-              <td>18</td>
-            </tr>
-            <tr>
-              <td>Study points</td>
-              <td>320</td>
-            </tr>
-            <tr>
-              <td>Leaderboard rank</td>
-              <td>3</td>
-            </tr>
-          </tbody>
-        </table>
+              <tr>
+                <td>Total study time</td>
+                <td class="num">26h 10m</td>
+              </tr>
+              <tr>
+                <td>Study sessions</td>
+                <td class="num">31</td>
+              </tr>
+              <tr>
+                <td>Tasks completed</td>
+                <td class="num">18</td>
+              </tr>
+              <tr>
+                <td>Study points</td>
+                <td class="num">320</td>
+              </tr>
+              <tr>
+                <td>Leaderboard rank</td>
+                <td class="num">3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section>
         <h3>Recently Completed Tasks</h3>
         <p class="note">Placeholder: completed tasks will be loaded from the database.</p>
-        <ul>
+        <ul class="list">
           <li>AWS deliverable - CS 260 - Sep 12</li>
           <li>Specification deliverable - CS 260 - Sep 8</li>
           <li>Homework 3 - Math 112 - Sep 5</li>

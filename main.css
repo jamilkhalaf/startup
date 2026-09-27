@@ -504,3 +504,28 @@ h4 {
 .ranking .me td {
   font-weight: 600;
 }
+
+/* Profile */
+
+.profile-header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.profile-header img {
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+}
+
+.profile-details h3 {
+  border-bottom: none;
+  font-size: 1.3rem;
+  padding-bottom: 0;
+}
+
+.profile-details p {
+  color: var(--color-muted);
+  margin-bottom: var(--space-md);
+}
