@@ -578,3 +578,17 @@ button:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
+
+button,
+a,
+header menu a {
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+button:active {
+  background-color: var(--color-bg);
+}
+
+.btn-primary:active {
+  background-color: var(--color-accent-dark);
+}
