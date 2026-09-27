@@ -560,3 +560,9 @@ h4 {
     gap: 0.25rem;
   }
 }
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
