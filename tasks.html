@@ -62,7 +62,8 @@
         <h3>Pending</h3>
         <!-- Database placeholder: tasks will be loaded from MongoDB -->
         <p><small><em>Placeholder: these tasks will be stored in and loaded from the database.</em></small></p>
-        <table>
+        <div class="table-wrap">
+          <table>
           <thead>
             <tr>
               <th>Task</th>
@@ -77,9 +78,11 @@
               <td>CS 260</td>
               <td>Sep 20</td>
               <td>
-                <button type="button">Complete</button>
-                <button type="button">Edit</button>
-                <button type="button">Delete</button>
+                <div class="row-actions">
+                  <button class="btn-small" type="button">Complete</button>
+                  <button class="btn-small" type="button">Edit</button>
+                  <button class="btn-small" type="button">Delete</button>
+                </div>
               </td>
             </tr>
             <tr>
@@ -87,9 +90,11 @@
               <td>Math 112</td>
               <td>Sep 18</td>
               <td>
-                <button type="button">Complete</button>
-                <button type="button">Edit</button>
-                <button type="button">Delete</button>
+                <div class="row-actions">
+                  <button class="btn-small" type="button">Complete</button>
+                  <button class="btn-small" type="button">Edit</button>
+                  <button class="btn-small" type="button">Delete</button>
+                </div>
               </td>
             </tr>
             <tr>
@@ -97,19 +102,23 @@
               <td>Writing 150</td>
               <td>Sep 19</td>
               <td>
-                <button type="button">Complete</button>
-                <button type="button">Edit</button>
-                <button type="button">Delete</button>
+                <div class="row-actions">
+                  <button class="btn-small" type="button">Complete</button>
+                  <button class="btn-small" type="button">Edit</button>
+                  <button class="btn-small" type="button">Delete</button>
+                </div>
               </td>
             </tr>
           </tbody>
         </table>
+        </div>
       </section>
 
       <section>
         <h3>Completed</h3>
         <p><small><em>Placeholder: completed tasks and points will be loaded from the database.</em></small></p>
-        <table>
+        <div class="table-wrap">
+          <table>
           <thead>
             <tr>
               <th>Task</th>
@@ -133,6 +142,7 @@
             </tr>
           </tbody>
         </table>
+        </div>
       </section>
     </main>
 
