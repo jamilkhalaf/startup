@@ -35,21 +35,27 @@
 
       <section>
         <h3>Add a Task</h3>
-        <form method="get" action="tasks.html">
-          <div>
-            <label for="taskName">Task</label>
-            <input type="text" id="taskName" name="taskName" placeholder="What do you need to do?" />
-          </div>
-          <div>
-            <label for="course">Course</label>
-            <input type="text" id="course" name="course" placeholder="CS 260" />
-          </div>
-          <div>
-            <label for="dueDate">Due date</label>
-            <input type="date" id="dueDate" name="dueDate" />
-          </div>
-          <button type="submit">Add Task</button>
-        </form>
+        <div class="panel">
+          <form method="get" action="tasks.html">
+            <div class="form-row">
+              <div class="field">
+                <label for="taskName">Task</label>
+                <input type="text" id="taskName" name="taskName" placeholder="What do you need to do?" />
+              </div>
+              <div class="field">
+                <label for="course">Course</label>
+                <input type="text" id="course" name="course" placeholder="CS 260" />
+              </div>
+              <div class="field">
+                <label for="dueDate">Due date</label>
+                <input type="date" id="dueDate" name="dueDate" />
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn-primary" type="submit">Add Task</button>
+            </div>
+          </form>
+        </div>
       </section>
 
       <section>

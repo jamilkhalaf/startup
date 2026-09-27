@@ -398,3 +398,29 @@ blockquote p {
   font-size: 1.1rem;
   margin-bottom: 0.35rem;
 }
+
+/* Forms laid out in a row */
+
+.form-row {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.form-row .field {
+  margin-bottom: 0;
+}
+
+.form-row input {
+  width: 100%;
+}
+
+.panel .form-actions {
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 700px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
