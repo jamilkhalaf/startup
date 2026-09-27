@@ -101,13 +101,13 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits)
-- [ ] **Visually appealing colors and layout. No overflowing elements.** - I did not complete this part of the deliverable.
-- [ ] **Use of a CSS framework** - I did not complete this part of the deliverable.
-- [ ] **All visual elements styled using CSS** - I did not complete this part of the deliverable.
-- [ ] **Responsive to window resizing using flexbox and/or grid display** - I did not complete this part of the deliverable.
-- [ ] **Use of a imported font** - I did not complete this part of the deliverable.
-- [ ] **Use of different types of selectors including element, class, ID, and pseudo selectors** - I did not complete this part of the deliverable.
+- [x] I completed the prerequisites for this deliverable (Simon deployed, GitHub link, Git commits) - Simon CSS is deployed to [simon.byusync.click](https://simon.byusync.click), every page footer links to this repository, and the work is spread over many commits.
+- [x] **Visually appealing colors and layout. No overflowing elements.** - All colors come from variables defined in `:root` in `main.css`: an off-white page, white surfaces, near black text, muted grey for secondary text, and one slate blue accent used for links, the active nav item, primary buttons, and the top three leaderboard ranks. I checked every page in a 400px viewport and `document.documentElement.scrollWidth` is 400 on all six, so nothing overflows. Wide tables sit in a `.table-wrap` container with `overflow-x: auto` so they scroll instead of stretching the page.
+- [x] **Use of a CSS framework** - Bootstrap 5.3.3 is loaded from a CDN on every page, with its integrity hash. I use its `.container` for page gutters and responsive padding on the header, main, and footer, and load `main.css` after it so my own rules take priority.
+- [x] **All visual elements styled using CSS** - Every element on every page is styled in `main.css`: header, nav menu, footer, headings, paragraphs, links, buttons, inputs, labels, tables, lists, blockquote, and images. There is no inline styling and no leftover browser defaults such as `<hr>` separators or bullet lists.
+- [x] **Responsive to window resizing using flexbox and/or grid display** - Flexbox lays out the header bar, nav menu, button rows, form rows, and the profile header. CSS grid lays out the login page (`.login`), the dashboard stat cards (`.stat-grid`), the add task form (`.form-row`), and the study rooms page (`.rooms-layout`). Media queries at 600px, 700px, 800px, and 900px collapse each of these to a single column, stack the header and footer, and tighten table and button spacing on phones. Stat cards go from three columns to two on tablets and one on phones.
+- [x] **Use of a imported font** - Inter is imported from Google Fonts at the top of `main.css` and applied to the whole app through `body`, with Arial and sans-serif as fallbacks.
+- [x] **Use of different types of selectors including element, class, ID, and pseudo selectors** - Element selectors style the base look (`body`, `h1`, `a`, `table`, `th`, `td`, `button`, `input`, `img`, `blockquote`). Class selectors handle components (`.panel`, `.stat-grid`, `.feed`, `.table-wrap`, `.btn-primary`, `.note`). ID selectors style `#brand` in the header and `#userName` on the dashboard and profile. Pseudo class selectors cover `:hover`, `:focus`, `:focus-visible`, `:active`, `:first-child`, `:last-child`, and `:nth-child(-n + 3)` for the top three ranks, plus the `::placeholder` pseudo element. I also use child and descendant combinators such as `body > footer` and `header menu a`.
 
 ## 🚀 React part 1: Routing deliverable
 
