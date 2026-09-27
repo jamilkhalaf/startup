@@ -474,3 +474,22 @@ tbody tr:hover {
     grid-template-columns: 1fr;
   }
 }
+
+.feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feed li {
+  border-left: 2px solid var(--color-border);
+  padding: 0.35rem 0 0.35rem var(--space-md);
+}
+
+.feed li:first-child {
+  border-left-color: var(--color-accent);
+}
+
+h4 {
+  margin-top: var(--space-lg);
+}
