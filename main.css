@@ -448,3 +448,17 @@ tbody tr:hover {
 .num {
   text-align: right;
 }
+
+/* Study rooms */
+
+.form-inline {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.form-inline .field {
+  margin-bottom: 0;
+  min-width: 260px;
+}
