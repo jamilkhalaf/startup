@@ -52,6 +52,22 @@ Built six pages (index, dashboard, tasks, rooms, leaderboard, profile) with the 
 - A browser caches images and pages hard. After deploying, use Cmd+Shift+R or `curl` the URL to see what the server is really sending.
 - Editing files directly on the server gets wiped the next time `deployFiles.sh` runs, since it deletes the folder before copying. Make changes locally.
 
+## CSS
+
+Interesting things I have learned about CSS
+
+### My startup CSS
+
+One `main.css` for all six pages, loaded after Bootstrap so my rules win.
+
+- CSS variables in `:root` for colors and spacing. Changing one value restyles the whole app.
+- Bootstrap gives me `.container` for page gutters. Everything else is my own CSS so the app does not look like stock Bootstrap.
+- Flexbox for rows (header, button groups, profile header), grid for real layouts (login, stat cards, rooms).
+- A shared `.table-wrap` with `overflow-x: auto` keeps wide tables scrollable instead of pushing the page sideways.
+- `body > footer` instead of `footer`, because a plain `footer` selector also hit the `<footer>` inside my blockquote.
+- To check phone width I served the folder and loaded the page in a 400px iframe, then read `document.documentElement.scrollWidth`. If it is bigger than 400 something is overflowing.
+- Selector types I used: element (`body`, `table`, `button`), class (`.panel`, `.stat`), ID (`#brand`, `#userName`), pseudo class (`:hover`, `:focus`, `:first-child`, `:nth-child`), pseudo element (`::placeholder`).
+
 ## React
 
 Interesting things I have learned about React
