@@ -532,8 +532,7 @@ h4 {
 
 /* Grid children manage their own spacing */
 
-.rooms-layout section,
-.login section {
+.rooms-layout section {
   margin-bottom: 0;
 }
 
