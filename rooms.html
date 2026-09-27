@@ -44,53 +44,57 @@
         </form>
       </section>
 
-      <section>
-        <h3>Open Rooms</h3>
-        <p class="note">Placeholder: rooms and member counts will be loaded from the database.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Room</th>
-              <th>Studying now</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>CS 260 grind session</td>
-              <td>3</td>
-              <td><button type="button">Join</button></td>
-            </tr>
-            <tr>
-              <td>Math 112 exam prep</td>
-              <td>5</td>
-              <td><button type="button">Join</button></td>
-            </tr>
-            <tr>
-              <td>Library quiet room</td>
-              <td>1</td>
-              <td><button type="button">Join</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+      <div class="rooms-layout">
+        <section>
+          <h3>Open Rooms</h3>
+          <p class="note">Placeholder: rooms and member counts will be loaded from the database.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Room</th>
+                  <th class="num">Studying now</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CS 260 grind session</td>
+                  <td class="num">3</td>
+                  <td><button class="btn-small" type="button">Join</button></td>
+                </tr>
+                <tr>
+                  <td>Math 112 exam prep</td>
+                  <td class="num">5</td>
+                  <td><button class="btn-small" type="button">Join</button></td>
+                </tr>
+                <tr>
+                  <td>Library quiet room</td>
+                  <td class="num">1</td>
+                  <td><button class="btn-small" type="button">Join</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-      <section>
-        <h3>Current Room: CS 260 grind session</h3>
-        <button type="button">Start Studying</button>
-        <button type="button">Stop Studying</button>
-        <button type="button">Leave Room</button>
+        <section>
+          <h3>Current Room: CS 260 grind session</h3>
+          <button type="button">Start Studying</button>
+          <button type="button">Stop Studying</button>
+          <button type="button">Leave Room</button>
 
-        <h4>Live Activity</h4>
-        <!-- WebSocket placeholder: these events will arrive in realtime from the server -->
-        <p class="note">Placeholder: this feed will update in realtime over a WebSocket connection.</p>
-        <ul>
-          <li>jamil started a study session</li>
-          <li>sarah completed "Homework 4"</li>
-          <li>mike joined the room</li>
-          <li>sarah started a study session</li>
-        </ul>
-      </section>
+          <h4>Live Activity</h4>
+          <!-- WebSocket placeholder: these events will arrive in realtime from the server -->
+          <p class="note">Placeholder: this feed will update in realtime over a WebSocket connection.</p>
+          <ul>
+            <li>jamil started a study session</li>
+            <li>sarah completed "Homework 4"</li>
+            <li>mike joined the room</li>
+            <li>sarah started a study session</li>
+          </ul>
+        </section>
+      </div>
     </main>
 
     <footer>

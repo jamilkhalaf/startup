@@ -462,3 +462,15 @@ tbody tr:hover {
   margin-bottom: 0;
   min-width: 260px;
 }
+
+.rooms-layout {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 900px) {
+  .rooms-layout {
+    grid-template-columns: 1fr;
+  }
+}
