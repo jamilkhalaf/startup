@@ -536,3 +536,27 @@ h4 {
 .login section {
   margin-bottom: 0;
 }
+
+@media (max-width: 600px) {
+  main {
+    padding-top: var(--space-md);
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  th,
+  td {
+    padding-right: 0.5rem;
+  }
+
+  .btn-small {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .row-actions {
+    gap: 0.25rem;
+  }
+}
